@@ -1,6 +1,6 @@
-<nav class="header">
+<nav class="header" id="header">
     <ul class="logo-time">
-        <li class="logo"><img src="" alt="logo"></li>
+        <li class="logo"><img src="assets/image/icon/logo-long.png" alt="logo"></li>
         <hr>
         <li><i class="fa fa-clock"></i><a href="">Thứ hai, 16/11/2001</a></li>
     </ul>
