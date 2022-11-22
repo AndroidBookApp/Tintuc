@@ -58,6 +58,5 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "guzzlehttp/guzzle": "~5.0"
+    "prefer-stable": true
 }
