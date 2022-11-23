@@ -6,10 +6,12 @@
             <img src="assets/image/icon/logo-long.png" alt="logo-long" class="logo-ft">
         </div>
         <div class="ftt-right">
-            <p>Liên Hệ qua </p>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-youtobe"></i></a>
+            <p>Thông tin thêm tại: </p>
+            <div>
+                
+                <img src="assets/image/icon/facebook.svg" alt="">
+                <img src="assets/image/icon/youtube.svg" alt="">
+            </div>
         </div>
     </div>
 </div>

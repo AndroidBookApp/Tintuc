@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UTE NEWS</title>
-    <link rel="icon" href="assets/image/icon/logo.jpg">
+    <link rel="icon" href="assets/image/icon/logo.png">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/css/footer.css">
