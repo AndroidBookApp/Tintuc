@@ -29,7 +29,7 @@ class Sendmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Mail from UTE LIVE NEWS')
+        return $this->subject('MAIL FROM UTE LIVE NEWS')
                     ->view('emails.myTestMail');
     }
 }
