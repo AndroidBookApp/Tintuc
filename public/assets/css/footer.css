@@ -40,6 +40,12 @@ footer .footer-menu ul li a {
     margin-right: auto;
 }
 
+.footer-contact div p {
+    color: var(--text-header-bottom);
+    text-decoration: none;
+    font-weight: bold;
+}
+
 .footer-contact .contact-logo .logo {
     display: flex;
 }

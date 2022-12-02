@@ -50,10 +50,12 @@
                 <h4>Báo tiếng việt có số lượng người xem nhiều</h6>
                 <p>Thuộc Team Larvel-Tintuc</p>
             </div>
+            <hr>
             <div>
                 <p>Tổng biên tập: Laravel-Tintuc</p>
                 <p>Địa chỉ: Trường ĐH Sư phạm Kỹ Thuật</p>
             </div>
+            <hr>
             <div>
                 <p>&copy;25/8-10/12/2022 TintucExpress dự trên bản quyền của VnEpress</p>
             </div>
