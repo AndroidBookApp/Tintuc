@@ -57,8 +57,8 @@ CREATE TABLE `chi_tiet_bai_dangs` (
   `trangThai` int(11) NOT NULL,
   `tacGia` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `idAnh` int(10) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
