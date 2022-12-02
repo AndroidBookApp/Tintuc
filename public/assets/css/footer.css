@@ -1,39 +1,73 @@
-@import 'color.css';
 footer {
-    height: 200px;
-    width: 100%;
-}
-
-footer .footer {
-    width: 80%;
-    height: 100%;
-    color: var(--text-header-bottom);
-    margin-left: auto;
+    padding: 0;
+    margin: 0;
     margin-right: auto;
-    display: block!important;
+    margin-left: auto;
+    width: 80%;
 }
 
-.logo-ft {
-    height: 75px;
-    width: auto;
-}
-
-.footer div {
+footer .footer-menu {
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.footer p {
-    font-size: 20px;
-    font-weight: bold;
-    display: inline-block;
-    line-height: 75px;
-    padding: 0%;
-    margin: 0;
+footer .footer-menu ul {
+    display: block;
 }
 
-.footer a {
-    text-decoration: none;
+footer .footer-menu ul li {
+    list-style-type: none;
+    line-height: 30px;
+    display: block;
+}
+
+footer .footer-menu ul li a {
     color: var(--text-header-bottom);
-    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-main a {
+    color: #000!important;
+}
+
+.footer-contact>div {
+    display: flex;
+    width: 97%;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-contact .contact-logo .logo {
+    display: flex;
+}
+
+.footer-contact .contact-logo .logo img {
+    height: 50px;
+    width: auto;
+    margin-left: 20px;
+}
+
+.footer-contact .contact-logo .logo p {
+    text-indent: 10px;
+    color: var(--text-header-bottom);
+    font-weight: bold;
+}
+
+.footer-contact .contact-logo .detail {
+    display: flex;
+}
+
+.footer-contact .contact-logo .detail img {
+    height: 35px;
+    width: 35px;
+    margin: 5px;
+}
+
+.footer-contact .contact-logo .detail p {
+    margin-right: 20px;
+    color: var(--text-header-bottom);
+    font-weight: bold;
 }
