@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `bai_dangs` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) PRIMARY KEY AUTO_INCREMENT,
   `tenBaiDang` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `idTheLoai` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -50,13 +50,13 @@ INSERT INTO `bai_dangs` (`id`, `tenBaiDang`, `idTheLoai`, `created_at`, `updated
 --
 
 CREATE TABLE `chi_tiet_bai_dangs` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `idBaiDang` int(10) UNSIGNED NOT NULL,
+  `id` int(10) PRIMARY KEY AUTO_INCREMENT,
+  `idBaiDang` int(10)  NOT NULL,
   `noiDung` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `thoiGian` date NOT NULL,
   `trangThai` int(11) NOT NULL,
   `tacGia` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `idAnh` int(10) UNSIGNED NOT NULL,
+  FOREIGN KEY(idBaiDang) REFERENCES bai_dangs(idBaiDang),
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -75,11 +75,12 @@ INSERT INTO `chi_tiet_bai_dangs` (`id`, `idBaiDang`, `noiDung`, `thoiGian`, `tra
 --
 
 CREATE TABLE `danh_gias` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) PRIMARY KEY AUTO_INCREMENT ,
   `noiDung` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `thoiGianDanhGia` date NOT NULL,
   `idRep` int(11) NOT NULL,
-  `idBaiDang` int(10) UNSIGNED NOT NULL,
+  `idBaiDang` int(10)  NOT NULL,
+  FOREIGN KEY(idBaiDang) REFERENCES bai_dangs(idBaiDang),
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -169,11 +170,12 @@ CREATE TABLE `failed_jobs` (
 --
 
 CREATE TABLE `hinh_anhs` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) PRIMARY KEY AUTO_INCREMENT,
   `urlAnh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `noiDung` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `tacGia` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `idBaiDang` int(10) UNSIGNED NOT NULL,
+  `idBaiDang` int(10)  NOT NULL,
+  FOREIGN KEY(idBaiDang) REFERENCES bai_dangs(idBaiDang),
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -247,6 +249,7 @@ CREATE TABLE `the_loais` (
   `id` int(10) UNSIGNED NOT NULL,
   `tenTheLoai` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `idDanhMuc` int(11) NOT NULL,
+  FOREIGN KEY(idDanhMuc) REFERENCES danh_mucs(idDanhMuc),
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -337,10 +340,11 @@ INSERT INTO `the_loais` (`id`, `tenTheLoai`, `idDanhMuc`, `created_at`, `updated
 --
 
 CREATE TABLE `thong_baos` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) PRIMARY KEY AUTO_INCREMENT,
   `noiDung` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `thoiGianGui` date NOT NULL,
-  `idUser` int(10) UNSIGNED NOT NULL,
+  `idUser` int(10)  NOT NULL,
+  FOREIGN KEY(idUser) REFERENCES users(idUser),
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -369,11 +373,7 @@ CREATE TABLE `users` (
 -- Chỉ mục cho các bảng đã đổ
 --
 
---
--- Chỉ mục cho bảng `bai_dangs`
---
-ALTER TABLE `bai_dangs`
-  ADD PRIMARY KEY (`id`);
+
 
 --
 -- Chỉ mục cho bảng `chi_tiet_bai_dangs`
@@ -458,8 +458,7 @@ ALTER TABLE `bai_dangs`
 --
 -- AUTO_INCREMENT cho bảng `chi_tiet_bai_dangs`
 --
-ALTER TABLE `chi_tiet_bai_dangs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 
 --
 -- AUTO_INCREMENT cho bảng `danh_gias`
