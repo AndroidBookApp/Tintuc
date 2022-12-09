@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('non-static-layout.home');
 });
 
+Route::get('/card', function () {
+    return view('non-static-layout.card');
+});
+
 Route::get('send-mail', function () {
     $details = [
         'title' => 'Thông Báo Về Tin Mới Trong UTE LIVE NEWS',
