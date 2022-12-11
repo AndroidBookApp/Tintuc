@@ -15,14 +15,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 
-<body>
+<body >
     <?php
 
     ?>
-    <header class="header">
+    <header class="header" style="opacity: 999;">
         @include('.static-layout.header')
     </header>
-    <div class="container">
+    <div class="container" style="opacity: 2;">
         @yield('content')
         @yield('card')
     </div>
