@@ -23,7 +23,7 @@
                <div class="navbar-nav ml-auto br align-items-center">
                
                    <div class="search">
-                    <input type="text" placeholder="Tìm kiếm" class="ip">
+                    <input type="text" placeholder="Tìm kiếm" class="ip" id="search">
                     <button class="sr">
                         <i class="fa-solid fa-magnifying-glass "></i>
                     </button>

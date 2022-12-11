@@ -18,8 +18,8 @@ Route::get('/', function () {
     return view('non-static-layout.home');
 });
 
-Route::get('/card', function () {
-    return view('non-static-layout.card');
+Route::get('/detail', function () {
+    return view('non-static-layout.detail');
 });
 
 Route::get('send-mail', function () {

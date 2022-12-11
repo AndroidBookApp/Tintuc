@@ -15,7 +15,7 @@
                </div>
                 <div class="row py-3 ">
                     <div class="col-md-4">
-                        <a href="" class="">Tập kết 5.000 tấn rác trên đường trung tâm thành phố</a>
+                        <a href="/detail/id_here" class="">Tập kết 5.000 tấn rác trên đường trung tâm thành phố</a>
                         <p>HÒA BÌNHVới hàng nghìn tấn rác thải tồn đọng, thành phố phải tập kết rác tạm thời trên đường trung tâm, đào hố chôn trong rừng.</p>
                     </div>
                     <div class="br col-md-4">
