@@ -13,13 +13,25 @@ use Illuminate\Support\Facades\Mail;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//home
 Route::get('/', function () {
     return view('non-static-layout.home');
 });
-
+//detail
 Route::get('/detail', function () {
     return view('non-static-layout.detail');
+});
+//login
+Route::get('/login', function () {
+    return view('non-static-layout.login');
+});
+//register
+Route::get('/register', function () {
+    return view('non-static-layout.register');
+});
+//information
+Route::get('/information', function () {
+    return view('non-static-layout.information');
 });
 
 Route::get('send-mail', function () {
