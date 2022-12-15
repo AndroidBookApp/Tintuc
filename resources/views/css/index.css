@@ -280,3 +280,35 @@ textarea:focus{
 .ts{
     color: #076db6;
 }
+.img-tb{
+  width: 60px;
+  height: 50px;
+}
+.img-tb img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.dropdown-menu{
+  width: 17rem;
+}
+.dropdown-menu li{
+  cursor: pointer;
+}
+.dropdown-menu li:hover{
+  background-color: #ebeaea !important;
+}
+.dr-t2{
+  width: 11rem;
+}
+.gap10{
+  gap: 0 10px;
+}
+.tt-tb{
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  width: 200px;
+}
