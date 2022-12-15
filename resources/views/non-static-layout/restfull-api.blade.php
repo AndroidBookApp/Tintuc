@@ -1,13 +1,14 @@
-<form action="/users" method="post">
+    <!-- demo create -->
+    <form action="/users" method="post">
         @csrf
         <input type="text" name="username" class="username">
         <input type="password" name="password" class="password">
         <input type="text" name="email" class="email">
         <input type="submit" name="submit" value="tạo">
     </form>
-
+<!-- demo delete -->
     <form action="" method="POST">
-        @method('DELETE')
+    @method('DELETE') <!-- custom your method: writing your method here   -->
         @csrf
         <button type="submit">Delete</button>               
     </form>
