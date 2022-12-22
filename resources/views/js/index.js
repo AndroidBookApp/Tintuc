@@ -31,3 +31,14 @@ window.onscroll= function(){
         
 //     }
 // }
+const tbhed = document.querySelector(".tb-hind")
+const luia =document.querySelector(".luia")
+const list_tb = document.querySelector(".list_tb")
+luia.addEventListener("click",function(e){
+    e.stopPropagation()
+})
+const theme_switch = document.querySelector(".theme-switch")
+theme_switch.addEventListener("click",()=>{
+    list_tb.classList.toggle("add_listtb")
+    theme_switch.classList.toggle("light-theme")
+})
