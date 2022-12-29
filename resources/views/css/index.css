@@ -299,7 +299,7 @@ textarea:focus{
   background-color: #ebeaea !important;
 }
 .dr-t2{
-  width: 11rem;
+  width: 13rem;
 }
 .gap10{
   gap: 0 10px;
@@ -311,4 +311,52 @@ textarea:focus{
   text-overflow: ellipsis;
   display: -webkit-box;
   width: 200px;
+}
+.theme-switch {
+ 
+  color: #FFF;
+  width: 40px;
+  height: 20px;
+  background: #FF1EAD;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  
+}
+.switch {
+  background: white;
+  width: 15px;
+  height: 15px;
+  background: #FFF;
+  border-radius: 100%;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  transition: 0.5s all ease;
+  
+}
+.luia{
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.add_listtb{
+  display: none;
+}
+.light-theme {
+ 
+  background: #000;
+
+ 
+ 
+}
+.light-theme .theme-switch {
+  background: #000;
+  width: 40px;
+  height: 20px;
+
+  
+}
+.light-theme .switch {
+  transform: translateX(17px);
 }
