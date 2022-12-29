@@ -40,6 +40,5 @@ luia.addEventListener("click", function(e) {
 })
 const theme_switch = document.querySelector(".theme-switch")
 theme_switch.addEventListener("click", () => {
-    list_tb.classList.toggle("add_listtb")
     theme_switch.classList.toggle("light-theme")
 })
