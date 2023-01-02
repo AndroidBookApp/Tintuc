@@ -50,6 +50,7 @@ Route::get('send-mail', function () {
 
 //User controller
 Route::controller(UserController::class)->group(function(){
-    Route::post('/login','login');//login method
-    Route::post('/register','register');//register method
+    Route::post('/login', 'login');//login method
+    Route::post('/register', 'register');//register method
+    Route::get('logout', 'logout'); //method logout
 });

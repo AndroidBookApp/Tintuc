@@ -111,7 +111,7 @@ class UserController extends Controller
 
     public function register(Request $request)
     {
-        if(User::where('username',$request->input('username'))->exists())
+        if(User::where('username',$request->input('username'))->exists())//check user 
             return redirect('register')->with('fail','username đã tồn tại');
         $username = $request->input('username');
         $first_name = $request->input('first_name');
@@ -131,6 +131,14 @@ class UserController extends Controller
         return redirect('register')->with('fail','mật khẩu không giống nhau');
 
     }
+
+    public function logout()
+    {
+        $Cookie = new CookieController();
+        $Cookie->deleteUser();//logout => delete cookie 
+        return redirect('/login');
+    }
+
     public static function getName($iduser)
     {
         $user = User::where('idUser',$iduser)->first();

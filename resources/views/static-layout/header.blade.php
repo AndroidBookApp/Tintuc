@@ -119,7 +119,7 @@
                             <a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i>Tài khoản của tôi </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
+                            <a class="dropdown-item" href="/logout"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
                         </li>
                     </ul>
                 </div>
