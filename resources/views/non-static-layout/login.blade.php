@@ -33,7 +33,7 @@
             <form method="post" action="login">
             <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                 <p class="lead fw-normal mb-0 me-3 mr-5">Sign in with</p>
-                <a href="{{url('/getInfor-facebook/facebook')}}" class="btn btn-primaryy btn-floating mx-1">
+                <a href="{{url('/getInfor/facebook')}}" class="btn btn-primaryy btn-floating mx-1">
                     <i class="fab fa-facebook-f"></i>
                 </a>
 
