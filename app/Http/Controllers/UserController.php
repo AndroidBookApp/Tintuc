@@ -124,7 +124,9 @@ class UserController extends Controller
             $user->username = $username;
             $user->password = $password;
             $user->save();
-            return redirect('/login')->with('message','đăng kí thành công')->with('username',$username)->with('password', $password);
+            if($request->has('remember'))
+                return redirect('/login')->with('message','đăng kí thành công')->with('username',$username)->with('password', $password);
+            return redirect('/login')->with('message','đăng kí thành công');
         }
         return redirect('register')->with('fail','mật khẩu không giống nhau');
 
