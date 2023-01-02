@@ -57,6 +57,6 @@ Route::controller(UserController::class)->group(function(){
 });
 
 Route::controller(SocialController::class)->group(function(){
-    Route::get('/getInfor-facebook/{social}', 'getInfo');//login method
-    Route::get('/checkInfor-facebook/{social}', 'checkInfo');//register method
+    Route::get('/getInfor/{social}', 'getInfo');//login method
+    Route::get('/checkInfor/{social}', 'checkInfo');//register method
 });
