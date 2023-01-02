@@ -124,7 +124,7 @@
                     </ul>
                 </div>
                 @else
-                    <a href="#" class="nav-item nav-link"><i class="fa-solid fa-user "></i>Đăng nhập</a>
+                    <a href="/login" class="nav-item nav-link"><i class="fa-solid fa-user "></i>Đăng nhập</a>
                 @endif
 
             </div>
