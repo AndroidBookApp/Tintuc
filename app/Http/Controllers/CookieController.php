@@ -20,7 +20,7 @@ class CookieController extends Controller
         Cookie::queue($name, $value, 60*24*30);
         return True;
     }
-    public function deleteUser(){
+    public static function deleteUser(){
         Cookie::queue('user', '', -1);
         Cookie::queue('url','',-1);
         return redirect('/Login');
