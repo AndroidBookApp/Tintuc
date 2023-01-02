@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Mail\Sendmail;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SocialController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,4 +54,9 @@ Route::controller(UserController::class)->group(function(){
     Route::post('/login', 'login');//login method
     Route::post('/register', 'register');//register method
     Route::get('logout', 'logout'); //method logout
+});
+
+Route::controller(SocialController::class)->group(function(){
+    Route::get('/getInfor-facebook/{social}', 'getInfo');//login method
+    Route::get('/checkInfor-facebook/{social}', 'checkInfo');//register method
 });
