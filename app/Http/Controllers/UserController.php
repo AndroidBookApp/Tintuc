@@ -108,4 +108,13 @@ class UserController extends Controller
         }
         return redirect('/login')->with('login fail','sai tài khoản hoặc mật khẩu');
     }
+
+    public static function getName($iduser)
+    {
+        $user = User::where('idUser',$iduser)->first();
+        if($user->first_name !== null || $user->last_name !== null)
+            return $user->last_name.' '.$user->first_name;
+        return $user->username;
+    }
+
 }
