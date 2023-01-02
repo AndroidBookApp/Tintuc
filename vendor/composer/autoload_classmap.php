@@ -16,6 +16,7 @@ return array(
     'App\\Http\\Controllers\\DanhMucController' => $baseDir . '/app/Http/Controllers/DanhMucController.php',
     'App\\Http\\Controllers\\HinhAnhController' => $baseDir . '/app/Http/Controllers/HinhAnhController.php',
     'App\\Http\\Controllers\\MailController' => $baseDir . '/app/Http/Controllers/MailController.php',
+    'App\\Http\\Controllers\\SocialController' => $baseDir . '/app/Http/Controllers/SocialController.php',
     'App\\Http\\Controllers\\TheLoaiController' => $baseDir . '/app/Http/Controllers/TheLoaiController.php',
     'App\\Http\\Controllers\\ThongBaoController' => $baseDir . '/app/Http/Controllers/ThongBaoController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',

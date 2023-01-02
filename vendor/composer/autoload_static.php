@@ -521,6 +521,7 @@ class ComposerStaticInit0475e2e768046b9c1bb3ed8dd3723558
         'App\\Http\\Controllers\\DanhMucController' => __DIR__ . '/../..' . '/app/Http/Controllers/DanhMucController.php',
         'App\\Http\\Controllers\\HinhAnhController' => __DIR__ . '/../..' . '/app/Http/Controllers/HinhAnhController.php',
         'App\\Http\\Controllers\\MailController' => __DIR__ . '/../..' . '/app/Http/Controllers/MailController.php',
+        'App\\Http\\Controllers\\SocialController' => __DIR__ . '/../..' . '/app/Http/Controllers/SocialController.php',
         'App\\Http\\Controllers\\TheLoaiController' => __DIR__ . '/../..' . '/app/Http/Controllers/TheLoaiController.php',
         'App\\Http\\Controllers\\ThongBaoController' => __DIR__ . '/../..' . '/app/Http/Controllers/ThongBaoController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
