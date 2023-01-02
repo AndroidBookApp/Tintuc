@@ -92,7 +92,7 @@ class UserController extends Controller
             $link = $Cookie->get('url'); //return link before login
         $username = $request->input('username');
         $password = $request->input('password');
-        if(User::where('username', $username)->where('password', $password)->exists())
+        if(User::query()->where('username', $username)->where('password', $password)->exists())
         {
             $user = User::where('username', $username)->where('password', $password)->first();
             if($Cookie->setUser($user->id))
@@ -111,7 +111,7 @@ class UserController extends Controller
 
     public function register(Request $request)
     {
-        if(User::where('username',$request->input('username'))->exists())//check user 
+        if(User::query()->where('username',$request->input('username'))->exists())//check user 
             return redirect('register')->with('fail','username đã tồn tại');
         $username = $request->input('username');
         $first_name = $request->input('first_name');
@@ -141,7 +141,7 @@ class UserController extends Controller
 
     public static function getName($id)
     {
-        $user = User::where('id',$id)->first();
+        $user = User::query()->where('id',$id)->first();
         if($user->first_name !== null || $user->last_name !== null)
             return $user->last_name.' '.$user->first_name;
         return $user->username;
