@@ -139,9 +139,9 @@ class UserController extends Controller
         return redirect('/login');
     }
 
-    public static function getName($iduser)
+    public static function getName($id)
     {
-        $user = User::where('id',$iduser)->first();
+        $user = User::where('id',$id)->first();
         if($user->first_name !== null || $user->last_name !== null)
             return $user->last_name.' '.$user->first_name;
         return $user->username;
