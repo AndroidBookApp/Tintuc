@@ -94,7 +94,7 @@ class UserController extends Controller
         $password = $request->input('password');
         if(User::query()->where('username', $username)->where('password', $password)->exists())
         {
-            $user = User::where('username', $username)->where('password', $password)->first();
+            $user = User::query()->where('username', $username)->where('password', $password)->first();
             if($Cookie->setUser($user->id))
             {
                 $Cookie->set('last_user', $username);

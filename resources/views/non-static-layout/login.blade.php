@@ -1,7 +1,6 @@
 @extends('.layout.main-layout')
 @section('content')
 @php
-    App\Http\Controllers\CookieController::deleteUser();
     $last_user = '';
     $password = '';
     $checked ='';
