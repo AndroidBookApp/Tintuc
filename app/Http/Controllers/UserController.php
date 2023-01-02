@@ -95,7 +95,7 @@ class UserController extends Controller
         if(User::where('username', $username)->where('password', $password)->exists())
         {
             $user = User::where('username', $username)->where('password', $password)->first();
-            if($Cookie->setUser($user->idUser))
+            if($Cookie->setUser($user->id))
             {
                 $Cookie->set('last_user', $username);
                 $Cookie->delete('password');
