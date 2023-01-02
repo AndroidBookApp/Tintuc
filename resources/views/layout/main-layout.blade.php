@@ -16,18 +16,6 @@
 </head>
 
 <body>
-    <?php
-
-    ?>
-    <header class="header">
-        @include('.static-layout.header')
-    </header>
-    <div class="container">
-        @yield('content')
-    </div>
-    <footer class="footer">
-        @include('.static-layout.footer')
-    </footer>
     <!-- script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -37,6 +25,15 @@
     <script src="assets/js/live-search.js"></script>
     <script src="assets/js/scroll.js"></script>
     <script src="assets/js/index.js"></script>
+    <header class="header">
+        @include('.static-layout.header')
+    </header>
+    <div class="container">
+        @yield('content')
+    </div>
+    <footer class="footer">
+        @include('.static-layout.footer')
+    </footer>
     
 </body>
 

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Mail\Sendmail;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,4 +46,10 @@ Route::get('send-mail', function () {
     }
      
     dd("Email is Sent.");
+});
+
+//User controller
+Route::controller(UserController::class)->group(function(){
+    Route::post('/login','login');//login method
+    // Route::post('/Register','Register');
 });
