@@ -51,5 +51,5 @@ Route::get('send-mail', function () {
 //User controller
 Route::controller(UserController::class)->group(function(){
     Route::post('/login','login');//login method
-    // Route::post('/Register','Register');
+    Route::post('/register','register');//register method
 });

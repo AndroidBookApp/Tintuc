@@ -109,6 +109,26 @@ class UserController extends Controller
         return redirect('/login')->with('login fail','sai tài khoản hoặc mật khẩu');
     }
 
+    public function register(Request $request)
+    {
+        if(User::where('username',$request->input('username'))->exists())
+            return redirect('register')->with('fail','username đã tồn tại');
+        $username = $request->input('username');
+        $first_name = $request->input('first_name');
+        $cf_password = $request->input('cf_password');
+        $password = $request->input('password');
+        if($password == $cf_password)
+        {
+            $user = new User();
+            $user->first_name = $first_name;
+            $user->username = $username;
+            $user->password = $password;
+            $user->save();
+            return redirect('/login')->with('message','đăng kí thành công')->with('username',$username)->with('password', $password);
+        }
+        return redirect('register')->with('fail','mật khẩu không giống nhau');
+
+    }
     public static function getName($iduser)
     {
         $user = User::where('idUser',$iduser)->first();

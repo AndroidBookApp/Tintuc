@@ -1,10 +1,5 @@
 @extends('.layout.main-layout')
 @section('content')
-@if(session('login fail'))
-<script>
-    alert('{{ session("login fail") }}')
-</script>
-@endif
 @php
     $last_user = '';
     $password = '';
@@ -21,7 +16,12 @@
         @endphp
     @endif
 @endif
-
+@if(session('username') && session('password'))
+    @php  
+        $last_user = session('username');
+        $password = session('password');
+    @endphp
+@endif
 <section class="mt-5">
     <div class="container-fluid h-custom">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -49,6 +49,15 @@
             <div class="divider d-flex align-items-center my-4">
                 <p class="text-center fw-bold mx-3 mb-0">Or</p>
             </div>
+            @if(session('message'))
+            <div class="registed" style="width:100%; background-color:#c2ffd1; border-radius: 5px/5px;">
+                <p class="text-center" style="line-height: 40px; font-size: 15px; font-weight:bold; color:rgb(0, 139, 53);">{{session('message')}}</p>
+            </div><br>
+            @elseif(session('login fail'))
+            <div class="registed" style="width:100%; background-color:rgb(255, 211, 211); border-radius: 5px/5px;">
+                <p class="text-center" style="line-height: 40px; font-size: 15px; font-weight:bold; color:rgb(133, 0, 0);">{{session('login fail')}}</p>
+            </div><br>
+            @endif
                 <!-- Email input -->
             <div class="form-outline mb-4">
                 <input type="text" class="w-100 px-3 py-2 clm" value='{{$last_user}}' placeholder="Nhập email" name="username" id="username">
@@ -77,7 +86,7 @@
             <div class="text-center text-lg-start mt-4 pt-2">
                 <input type="submit" class="btn btn-primaryym btn-lg"
                 style="padding-left: 2.5rem; padding-right: 2.5rem;" value="Đăng nhập"/>
-                <p class="small fw-bold mt-2 pt-1 mb-0">Bạn chưa có tài khoản? <a href="sginup.html"
+                <p class="small fw-bold mt-2 pt-1 mb-0">Bạn chưa có tài khoản? <a href="/register"
                     class="link-danger" style="color: red;">Đăng ký</a></p>
             </div>
             </form>
