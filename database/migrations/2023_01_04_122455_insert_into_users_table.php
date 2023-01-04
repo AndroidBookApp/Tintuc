@@ -27,7 +27,7 @@ class InsertIntoUsersTable extends Migration
                 'password' => 'admin',
                 'first_name' => 'admin',
                 'last_name' => 'admin',
-                'is_admin' => true,
+                'is_admin' => true
             )
         );
     }
