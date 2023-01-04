@@ -15,11 +15,12 @@ class CreateNotificationTable extends Migration
     {
         Schema::create('notification', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('content');
+            $table->string('title')->nullable();
+            $table->string('content')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->date('create_at')->useCurrent();
+            $table->date('create_at')->useCurrent()->nullable();
+            $table->date('update_at')->useCurrentOnUpdate()->nullable();
         });
     }
 

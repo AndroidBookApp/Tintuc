@@ -19,10 +19,10 @@ class CreateCommentTable extends Migration
             $table->foreign('users_id')->references('id')->on('users');
             $table->unsignedBigInteger('post_id');
             $table->foreign('post_id')->references('id')->on('post');
-            $table->string('content');
-            $table->integer('repComment');
-            $table->date('create_at')->useCurrent();
-            $table->date('update_at')->useCurrentOnUpdate();
+            $table->string('content')->nullable();
+            $table->integer('repComment')->nullable();
+            $table->date('create_at')->useCurrent()->nullable();
+            $table->date('update_at')->useCurrentOnUpdate()->nullable();
         });
     }
 

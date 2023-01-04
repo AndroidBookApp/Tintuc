@@ -16,12 +16,12 @@ class CreatePostTable extends Migration
         Schema::create('post', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('rootImage');
+            $table->string('rootImage')->nullable();
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('category');
-            $table->string('shortDescription');
-            $table->date('create_at')->useCurrent();
-            $table->date('update_at')->useCurrentOnUpdate();
+            $table->string('shortDescription')->nullable();
+            $table->date('create_at')->useCurrent()->nullable();
+            $table->date('update_at')->useCurrentOnUpdate()->nullable();
         });
     }
 

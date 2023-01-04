@@ -15,11 +15,12 @@ class CreateImageTable extends Migration
     {
         Schema::create('image', function (Blueprint $table) {
             $table->id();
-            $table->string('link');
-            $table->string('title');
+            $table->string('link')->nullable();
+            $table->string('title')->nullable();
             $table->unsignedBigInteger('post_id');
             $table->foreign('post_id')->references('id')->on('post');
-            $table->timestamps();
+            $table->date('create_at')->useCurrent()->nullable();
+            $table->date('update_at')->useCurrentOnUpdate()->nullable();
         });
     }
 

@@ -19,13 +19,13 @@ class CreateUsersTable extends Migration
             $table->string('last_name')->nullable();
             $table->string('username')->unique();
             $table->string('password');
-            $table->string('email')->unique();
+            $table->string('email')->unique()->nullable();
             $table->string('sdt')->unique()->nullable();
             $table->string('ngaysinh')->nullable();
             $table->boolean('is_active')->default(true);
-            $table->boolean('is_admin')->default(true);
-            $table->date('create_at')->useCurrent();
-            $table->date('last_login');
+            $table->boolean('is_admin')->default(false);
+            $table->date('create_at')->useCurrent()->nullable();
+            $table->date('last_login')->nullable()->nullable();
         });
     }
 
