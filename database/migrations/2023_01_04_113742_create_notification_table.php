@@ -17,7 +17,8 @@ class CreateNotificationTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('content');
-            $table->foreign('user')->references('id')->on('users')->onDelete('cascase');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->date('create_at')->useCurrent();
         });
     }

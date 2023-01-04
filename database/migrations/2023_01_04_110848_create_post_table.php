@@ -17,7 +17,8 @@ class CreatePostTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('rootImage');
-            $table->foreign('category')->references('id')->on('category')->onDelete('cascade');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('category');
             $table->string('shortDescription');
             $table->date('create_at')->useCurrent();
             $table->date('update_at')->useCurrentOnUpdate();
