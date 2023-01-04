@@ -142,6 +142,7 @@ class UserController extends Controller
     public static function getName($id)
     {
         $user = User::query()->where('id',$id)->first();
+        // dd($user);
         if($user->first_name !== null || $user->last_name !== null)
             return $user->last_name.' '.$user->first_name;
         return $user->username;
