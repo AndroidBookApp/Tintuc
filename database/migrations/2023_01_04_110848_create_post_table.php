@@ -16,7 +16,7 @@ class CreatePostTable extends Migration
         Schema::create('post', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('rootImage')->nullable();
+            $table->string('rootImage');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('category');
             $table->string('shortDescription')->nullable();

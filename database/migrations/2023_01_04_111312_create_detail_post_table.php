@@ -17,7 +17,7 @@ class CreateDetailPostTable extends Migration
             $table->id();
             $table->unsignedBigInteger('post_id');
             $table->foreign('post_id')->references('id')->on('post');
-            $table->string('content',"65535");
+            $table->longText('content');
             $table->date('create_at')->useCurrent()->nullable();
             $table->date('update_at')->useCurrentOnUpdate()->nullable();
         });

@@ -21,7 +21,9 @@ class InsertIntoUsersTable extends Migration
                 'password' => '123',
                 'first_name' => '8 Tủi',
                 'last_name' => 'Quỳnh'
-            ),
+            )
+        );
+        DB::table('users')->insert(
             array(
                 'username' => 'admin',
                 'password' => 'admin',
@@ -29,7 +31,7 @@ class InsertIntoUsersTable extends Migration
                 'last_name' => 'admin',
                 'is_admin' => true
             )
-        );
+            );
     }
 
     /**

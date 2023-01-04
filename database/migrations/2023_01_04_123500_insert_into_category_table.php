@@ -18,10 +18,12 @@ class InsertIntoCategoryTable extends Migration
         DB::table('category')->insert(
             array(
                 'name' => 'Thời sự'
-            ),
+            )
+        );
+        DB::table('category')->insert(
             array(
                 'name' => 'Podcasts'
-            ),
+            )
         );
     }
 
