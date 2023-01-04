@@ -1,5 +1,16 @@
 @extends('.layout.main-layout')
 @section('content')
+@if(App\Http\Controllers\CookieController::checklayout('user'))
+    @php  
+        $link = '/';
+    @endphp
+    @if(App\Http\Controllers\CookieController::checklayout('url'))
+        @php  
+            $link = App\Http\Controllers\CookieController::get('url');
+        @endphp
+    @endif
+    <script>window.location = "{{$link}}";</script>
+@endif
 <section class="mt-5">
     <div class="container-fluid h-custom">
         <div class="row d-flex justify-content-center align-items-center h-100">

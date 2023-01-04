@@ -1,5 +1,17 @@
 @extends('.layout.main-layout')
 @section('content')
+
+@if(App\Http\Controllers\CookieController::checklayout('user'))
+    @php  
+        $link = '/';
+    @endphp
+    @if(App\Http\Controllers\CookieController::checklayout('url'))
+        @php  
+            $link = App\Http\Controllers\CookieController::get('url');
+        @endphp
+    @endif
+    <script>window.location = "{{$link}}";</script>
+@endif
 @php
     $last_user = '';
     $password = '';

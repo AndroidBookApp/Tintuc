@@ -9,10 +9,10 @@
     <link rel="icon" href="{{ asset('assets/image/icon/logo.png') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/css/login.css" />
-    <link rel="stylesheet" href="assets/css/infor.css" />
-    <link rel="stylesheet" href="assets/css/nav.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/infor.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/nav.css') }}" />
 </head>
 
 <body>

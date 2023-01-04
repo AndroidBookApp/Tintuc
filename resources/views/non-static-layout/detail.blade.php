@@ -1,5 +1,10 @@
 @extends('.layout.main-layout')
 @section('content')
+@php  
+
+App\Http\Controllers\CookieController::set('url',"/details/$id");
+@endphp
+<p>hê sờ lô, hơ sờ lyly {{$id}}</p>
     <div class="container my-4 position-relative">
       
         <div class="row">

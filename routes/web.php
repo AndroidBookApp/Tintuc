@@ -20,8 +20,8 @@ Route::get('/', function () {
     return view('non-static-layout.home');
 });
 //detail
-Route::get('/detail', function () {
-    return view('non-static-layout.detail');
+Route::get('/details/{id}', function ($id) {
+    return view('non-static-layout.detail', ['id' => $id]);
 });
 //login
 Route::get('/login', function () {

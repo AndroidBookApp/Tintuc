@@ -147,4 +147,12 @@ class UserController extends Controller
         return $user->username;
     }
 
+    public static function checkLogin()
+    {
+        $cookie = new CookieController();
+        if($cookie->check('user'))
+            if($cookie->check('url'))
+                return redirect($cookie->get('url'))->with('message'.'bạn đã đăng nhập');
+            return redirect('/')->with('message'.'bạn đã đăng nhập');
+    }
 }
