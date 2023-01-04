@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTheLoaisTable extends Migration
+class CreateDanhMucsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateTheLoaisTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('the_loais');
-        Schema::create('the_loais', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('tenTheLoai');
-            $table->integer('idDanhMuc'); 
-
-            $table->timestamps();
+        Schema::create('category', function (Blueprint $table) {
+            $table->increments("id");
+            $table->string("name"); 
         });
     }
 
@@ -30,6 +26,6 @@ class CreateTheLoaisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('the_loais');
+        Schema::dropIfExists('category');
     }
 }

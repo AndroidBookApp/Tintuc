@@ -1,10 +1,8 @@
 @extends('.layout.main-layout')
 @section('content')
-@php  
-
-App\Http\Controllers\CookieController::set('url',"/details/$id");
+@php
+    App\Http\Controllers\CookieController::set('url',"/details/$id");
 @endphp
-<p>hê sờ lô, hơ sờ lyly {{$id}}</p>
     <div class="container my-4 position-relative">
       
         <div class="row">
@@ -42,7 +40,7 @@ App\Http\Controllers\CookieController::set('url',"/details/$id");
                 </div>
             </div>
             <div class="col-md-4   ">
-                <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=449&q=80" class="img-fluid w-100" alt="">
+                <img src="https://scr.vn/wp-content/uploads/2020/07/H%C3%ACnh-T%E1%BA%BFt-h%C3%A0i-vui-g%E1%BB%ADi-s%E1%BA%BFp.jpg" class="img-fluid w-100" alt="">
                <div class="clct my-3 w350 bt">
                 <a href=""><h3>Xem nhiều</h3></a>
                 <img src="https://i1-vnexpress.vnecdn.net/2022/12/07/BHXH-ThuDuc-TTung-2-1670379662.jpg?w=300&h=180&q=100&dpr=1&fit=crop&s=AhkTlwH15yUKT7cDjJt3pA" class="img-fluid w-100 mb-3" alt="">
@@ -59,37 +57,6 @@ App\Http\Controllers\CookieController::set('url',"/details/$id");
                 <span><i class="fa-solid fa-comment"></i>18</span>
                </div>
                </div>
-               <!-- <div class="mb-3">
-                <a href=""><h3>Tin tài trợ</h3></a>
-                    <div class="">
-                        <div class="row mb-3">
-                            <div class="col-md-5 pr-0">
-                                <img src="https://static.eclick.vn/uploads/5x3/2022/11/08/o142908079n7393751586787046.png" class="img-fluid" alt="">
-                            </div>
-                            <div class="col-md-7">
-                                <span>4 lợi thế khi doanh nghiệp thành lập công ty tại nước ngoài</span>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-md-5 pr-0">
-                                <img src="https://static.eclick.vn/uploads/5x3/2022/11/08/o142908079n7393751586787046.png" class="img-fluid" alt="">
-                            </div>
-                            <div class="col-md-7">
-                                <span>4 lợi thế khi doanh nghiệp thành lập công ty tại nước ngoài</span>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-md-5 pr-0">
-                                <img src="https://static.eclick.vn/uploads/5x3/2022/11/08/o142908079n7393751586787046.png" class="img-fluid" alt="">
-                            </div>
-                            <div class="col-md-7">
-                                <span>4 lợi thế khi doanh nghiệp thành lập công ty tại nước ngoài</span>
-                            </div>
-                        </div>
-                        
-                       
-                    </div>
-               </div> -->
             </div>
         </div>
     </div>

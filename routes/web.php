@@ -32,13 +32,13 @@ Route::get('/register', function () {
     return view('non-static-layout.register');
 });
 //information
-Route::get('/information', function () {
-    return view('non-static-layout.information');
+Route::get('/profile', function () {
+    return view('non-static-layout.profile');
 });
 
-Route::get('send-mail', function () {
+Route::get('/send-mail', function () {
     $details = [
-        'title' => 'Thông Báo Về Tin Mới Trong UTE LIVE NEWS',
+        'title' => 'Thông Báo Về Tin Mới Trong TIN TỨC EXPRESS',
         'body' => 'Đã có thông báo mới trong bảng tin, xin mời bạn vào xem!!!'
     ];
     $mail_to = ["kiemluc01@gmail.com","nvthuan1201@gmail.com","nguyenquocvu10a2@gmail.com","Thanghoangminh149@gmail.com","buivietthinh.qng97@gmail.com","thanhhung14072001@gmail.com"];

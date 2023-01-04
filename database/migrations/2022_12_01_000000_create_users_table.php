@@ -17,15 +17,15 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
-            $table->string('username')->nullable();
-            $table->string('password')->nullable();
-            $table->string('email')->unique()->nullable();
-            $table->string('sdt')->nullable();
+            $table->string('username')->unique();
+            $table->string('password');
+            $table->string('email')->unique();
+            $table->string('sdt')->unique()->nullable();
             $table->string('ngaysinh')->nullable();
-            $table->integer('trangthai')->nullable();
-            $table->integer('quyen')->nullable();
-            $table->rememberToken();
-            $table->timestamps();
+            $table->boolean('is_active')->default(true);
+            $table->boolean('is_admin')->default(true);
+            $table->date('create_at')->useCurrent();
+            $table->date('last_login');
         });
     }
 

@@ -2,107 +2,67 @@
 @section('content') 
     <!--satrt main-->
     <div class="container py-4">
+        <!-- start main news  -->
         <div class="row bt">
             <div class="col-md-9">
-               <div class="row">
+                <div class="row">
                     <div class="col-md-8 pr-0" >
-                        <img src="https://i1-vnexpress.vnecdn.net/2022/12/07/img-1396-jpg-1670385049-167038-4171-5767-1670386051.jpg?w=680&h=408&q=100&dpr=1&fit=crop&s=BxAUpJrvjqrsf9e7K4A5HA" class="img-fluid" alt="">
+                        <img src="https://i1-vnexpress.vnecdn.net/2023/01/04/407aec6556ef8eb1d7fe-167281548-6491-4151-1672815524.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=px9C3QVQimZke4y_dnXPmw" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-4 bg-light">
-                       <a href=""><h4>Thức suốt đêm chờ rút bảo hiểm xã hội một lần</h4></a> 
-                        <p>TP HCMHàng trăm người dân xếp hàng suốt đêm trước trụ sở Bảo hiểm xã hội TP Thủ Đức, huyện Hóc Môn, chờ làm thủ tục rút bảo hiểm xã hội một lần.</p>
-                    </div>
-               </div>
-                <div class="row py-3 ">
-                    <div class="col-md-4">
-                        <a href="/detail/id_here" class="">Tập kết 5.000 tấn rác trên đường trung tâm thành phố</a>
-                        <p>HÒA BÌNHVới hàng nghìn tấn rác thải tồn đọng, thành phố phải tập kết rác tạm thời trên đường trung tâm, đào hố chôn trong rừng.</p>
-                    </div>
-                    <div class="br col-md-4">
-                        <a href="">Nhiều ngành học sắp 'trắng' giáo sư</a>
-                        <p>Từ năm 2013 đến 2022, số giáo sư, phó giáo sư giảm rõ rệt, có ngành học 10 năm không có ứng viên.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="gn">Góc nhìn</span>  </br>
-                        <a href="">Thị trưởng và chủ tịch</a>
-                        <p>Điểm cốt lõi để đưa mô hình thị trưởng vào thực tiễn là nhập hai vị trí bí thư thành uỷ và chủ tịch thành phố vào một người. </p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="meta-news">
-                                <a href="" class="meta-news-info">Nguyễn Ngọc Chu</a> 
-                                <a href=""><i class="fa-solid fa-comment"></i>18</a>
-                            </p>
-                            <div class="meta-image">
-                                <img src="https://i1-vnexpress.vnecdn.net/2022/08/27/NguyenNgocChuremovebgpreviewapng-1661608206.png?w=100&h=100&q=100&dpr=1&fit=crop&s=dt8iIbk1U_LVgyCeeAe36g" alt="">
-                            </div>
-                        </div>
+                        <a href="/details/1"><h4>Cứu hộ đã nối cáp vào cọc bêtông dài 35 m</h4></a> 
+                        <p>ĐỒNG THÁPSau bốn ngày đào bới, khoan và làm mềm đất, lực lượng cứu hộ chuẩn bị kéo cọc bêtông dài 35 m lên để cứu bé trai 10 tuổi mắc kẹt, trưa 4/1.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
-                <img src="https://images.unsplash.com/photo-1575830210841-25272641379b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=275&q=80" class="img-fluid" alt="">
+                <img src="https://scr.vn/wp-content/uploads/2020/07/T%E1%BA%BFt-n%C3%A0y-%C4%91%C6%B0a-g%E1%BA%A5u-v%E1%BB%81-nh%C3%A0.jpg" class="img-fluid" alt="">
             </div>
         </div>
+        <!-- end main news  -->
         <div class="row py-4 bt">
+            <!-- start left news  -->
             <div class="col-md-5 br " style="padding-left: 0px;">
                 <div class="bt pb-3">
-                    <img src="https://s1.vnecdn.net/vnexpress/restruct/i/v687/banner/wc-2022/Banner-wc-pc.png" class="img-fluid" alt="">
+                    <a href="/details/1" >
+                        <img src="https://s1.vnecdn.net/vnexpress/restruct/i/v687/banner/wc-2022/Banner-wc-pc.png" class="img-fluid" alt="">
+                    </a>
                 </div>
                 <div class="bt py-3">
                     <a href="" >An ninh siết chặt tại phiên xử Chủ tịch địa ốc Alibaba</a>
-                <div class="row pt-3">
-                    <div class="col-md-5">
-                        <img src="https://i1-vnexpress.vnecdn.net/2022/12/07/an-nhon-9444-1670418448.jpg?w=120&h=72&q=100&dpr=2&fit=crop&s=F_1OAADBecHLgKK_eNifzA" class="img-fluid" alt="">
+                    <div class="row pt-3">
+                        <div class="col-md-5">
+                            <img src="https://i1-vnexpress.vnecdn.net/2022/12/07/an-nhon-9444-1670418448.jpg?w=120&h=72&q=100&dpr=2&fit=crop&s=F_1OAADBecHLgKK_eNifzA" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-md-7 pl-0">
+                            <p>TP HCMSáng 8/12, nhiều lớp cảnh sát giữ an ninh trật tự từ cổng toà vào sân và phòng xét xử Nguyễn Thái Luyện, Chủ tịch địa ốc Alibaba, cùng 22 đồng phạm.</p>
+                        </div>
                     </div>
-                    <div class="col-md-7 pl-0">
-                        <p>TP HCMSáng 8/12, nhiều lớp cảnh sát giữ an ninh trật tự từ cổng toà vào sân và phòng xét xử Nguyễn Thái Luyện, Chủ tịch địa ốc Alibaba, cùng 22 đồng phạm.</p>
-                    </div>
-                </div>
                 </div>
                 <div class="bt py-3">
-                    <a href="" >Bình Định kiến nghị lập TP An Nhơn</a>
-                <div class="row pt-3">
-                    <div class="col-md-5">
-                        <img src="https://i1-vnexpress.vnecdn.net/2022/12/07/an-nhon-9444-1670418448.jpg?w=120&h=72&q=100&dpr=2&fit=crop&s=F_1OAADBecHLgKK_eNifzA" class="img-fluid" alt="">
+                    <a href="" >An ninh siết chặt tại phiên xử Chủ tịch địa ốc Alibaba</a>
+                    <div class="row pt-3">
+                        <div class="col-md-5">
+                            <img src="https://i1-vnexpress.vnecdn.net/2022/12/07/an-nhon-9444-1670418448.jpg?w=120&h=72&q=100&dpr=2&fit=crop&s=F_1OAADBecHLgKK_eNifzA" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-md-7 pl-0">
+                            <p>TP HCMSáng 8/12, nhiều lớp cảnh sát giữ an ninh trật tự từ cổng toà vào sân và phòng xét xử Nguyễn Thái Luyện, Chủ tịch địa ốc Alibaba, cùng 22 đồng phạm.</p>
+                        </div>
                     </div>
-                    <div class="col-md-7 pl-0">
-                        <p>Tỉnh Bình Định muốn nâng cấp thị xã An Nhơn với diện tích 244 km2 và 180.000 người lên thành phố với chức năng là đô thị kết nối miền Trung và Tây Nguyên.</p>
-                    </div>
-                </div>
                 </div>
                 <div class="bt py-3">
-                    <a href="" >Bình Định kiến nghị lập TP An Nhơn</a>
-                <div class="row pt-3">
-                    <div class="col-md-5">
-                        <img src="https://i1-vnexpress.vnecdn.net/2022/12/07/an-nhon-9444-1670418448.jpg?w=120&h=72&q=100&dpr=2&fit=crop&s=F_1OAADBecHLgKK_eNifzA" class="img-fluid" alt="">
+                    <a href="" >An ninh siết chặt tại phiên xử Chủ tịch địa ốc Alibaba</a>
+                    <div class="row pt-3">
+                        <div class="col-md-5">
+                            <img src="https://i1-vnexpress.vnecdn.net/2022/12/07/an-nhon-9444-1670418448.jpg?w=120&h=72&q=100&dpr=2&fit=crop&s=F_1OAADBecHLgKK_eNifzA" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-md-7 pl-0">
+                            <p>TP HCMSáng 8/12, nhiều lớp cảnh sát giữ an ninh trật tự từ cổng toà vào sân và phòng xét xử Nguyễn Thái Luyện, Chủ tịch địa ốc Alibaba, cùng 22 đồng phạm.</p>
+                        </div>
                     </div>
-                    <div class="col-md-7 pl-0">
-                        <p>Tỉnh Bình Định muốn nâng cấp thị xã An Nhơn với diện tích 244 km2 và 180.000 người lên thành phố với chức năng là đô thị kết nối miền Trung và Tây Nguyên.</p>
-                    </div>
-                </div>
-                </div>
-                <div class="bt py-3">
-                    <a href="" >Bình Định kiến nghị lập TP An Nhơn</a>
-                <div class="row pt-3">
-                    <div class="col-md-5">
-                        <img src="https://i1-vnexpress.vnecdn.net/2022/12/07/an-nhon-9444-1670418448.jpg?w=120&h=72&q=100&dpr=2&fit=crop&s=F_1OAADBecHLgKK_eNifzA" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-md-7 pl-0">
-                        <p>Tỉnh Bình Định muốn nâng cấp thị xã An Nhơn với diện tích 244 km2 và 180.000 người lên thành phố với chức năng là đô thị kết nối miền Trung và Tây Nguyên.</p>
-                    </div>
-                </div>
-                </div>
-                <div class="bt py-3">
-                    <a href="" >Bình Định kiến nghị lập TP An Nhơn</a>
-                <div class="row pt-3">
-                    <div class="col-md-5">
-                        <img src="https://i1-vnexpress.vnecdn.net/2022/12/07/an-nhon-9444-1670418448.jpg?w=120&h=72&q=100&dpr=2&fit=crop&s=F_1OAADBecHLgKK_eNifzA" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-md-7 pl-0">
-                        <p>Tỉnh Bình Định muốn nâng cấp thị xã An Nhơn với diện tích 244 km2 và 180.000 người lên thành phố với chức năng là đô thị kết nối miền Trung và Tây Nguyên.</p>
-                    </div>
-                </div>
                 </div>
             </div>
+            <!-- end left news  -->
             <div class="col-md-7 ">
                 <div class="bt pb-3">
                     <ul class="ti-ul">
