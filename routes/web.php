@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Mail\Sendmail;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\SocialController;
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,9 @@ Route::get('/', function () {
     return view('non-static-layout.home');
 });
 //detail
-Route::get('/details/{id}', function ($id) {
-    return view('non-static-layout.detail', ['id' => $id]);
-});
+// Route::get('/details/{id}', function ($id) {
+//     return view('non-static-layout.detail', ['id' => $id]);
+// });
 //login
 Route::get('/login', function () {
     return view('non-static-layout.login');
@@ -59,4 +60,9 @@ Route::controller(UserController::class)->group(function(){
 Route::controller(SocialController::class)->group(function(){
     Route::get('/getInfor/{social}', 'getInfo');//login method
     Route::get('/checkInfor/{social}', 'checkInfo');//register method
+});
+
+Route::controller(PostController::class)->group(function(){
+    Route::get('/','index');
+    Route::get('details/{id}','show');
 });

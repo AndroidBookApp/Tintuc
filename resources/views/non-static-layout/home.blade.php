@@ -7,11 +7,11 @@
             <div class="col-md-9">
                 <div class="row">
                     <div class="col-md-8 pr-0" >
-                        <img src="https://i1-vnexpress.vnecdn.net/2023/01/04/407aec6556ef8eb1d7fe-167281548-6491-4151-1672815524.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=px9C3QVQimZke4y_dnXPmw" class="img-fluid" alt="">
+                        <img src="{{$post_new['rootImage']}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-4 bg-light">
-                        <a href="/details/1"><h4>Cứu hộ đã nối cáp vào cọc bêtông dài 35 m</h4></a> 
-                        <p>ĐỒNG THÁPSau bốn ngày đào bới, khoan và làm mềm đất, lực lượng cứu hộ chuẩn bị kéo cọc bêtông dài 35 m lên để cứu bé trai 10 tuổi mắc kẹt, trưa 4/1.</p>
+                        <a href="/details/{{$post_new['id']}}"><h4>{{$post_new['name']}}</h4></a> 
+                        <p>{{$post_new['shortDescription']}}</p>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
             <div class="col-md-5 br " style="padding-left: 0px;">
                 <div class="bt pb-3">
                     <a href="/details/1" >
-                        <img src="https://s1.vnecdn.net/vnexpress/restruct/i/v687/banner/wc-2022/Banner-wc-pc.png" class="img-fluid" alt="">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr1RmoGhH9HqO3KyE50_u8vUwog0Vjc-MNjQ&usqp=CAU" class="img-fluid" alt="">
                     </a>
                 </div>
                 <div class="bt py-3">

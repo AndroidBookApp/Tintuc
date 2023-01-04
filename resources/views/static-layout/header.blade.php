@@ -29,7 +29,7 @@
                 
                 @if(App\Http\Controllers\CookieController::checklayout('user'))
                 @php
-                  $name = App\Http\Controllers\UserController::getname(App\Http\Controllers\CookieController::get('user'));
+                  
                 @endphp
                 <div class="dropdown mr-2">
                     <a
@@ -109,7 +109,7 @@
                         alt="Black and White Portrait of a Man"
                         loading="lazy"
                         />
-                        <span>{{ $name }}</span>
+                        <span></span>
                     </a>
                     <ul
                         class="dropdown-menu dropdown-menu-end"
