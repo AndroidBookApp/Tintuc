@@ -16,7 +16,7 @@ class CreateDetailPostTable extends Migration
         Schema::create('detail_post', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('post_id');
-            $table->foreign('post_id')->references('id')->on('post')->onDelete('cascase');
+            $table->foreign('post_id')->references('id')->on('post')->onDelete('cascade');
             $table->longText('content');
             $table->date('create_at')->useCurrent()->nullable();
             $table->date('update_at')->useCurrentOnUpdate()->nullable();

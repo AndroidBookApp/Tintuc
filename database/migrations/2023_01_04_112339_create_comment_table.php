@@ -16,9 +16,9 @@ class CreateCommentTable extends Migration
         Schema::create('comment', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('users_id');
-            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascase');
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('post_id');
-            $table->foreign('post_id')->references('id')->on('post')->onDelete('cascase');
+            $table->foreign('post_id')->references('id')->on('post')->onDelete('cascade');
             $table->string('content')->nullable();
             $table->integer('repComment')->nullable();
             $table->date('create_at')->useCurrent()->nullable();

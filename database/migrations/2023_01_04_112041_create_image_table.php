@@ -18,7 +18,7 @@ class CreateImageTable extends Migration
             $table->string('link')->nullable();
             $table->string('title')->nullable();
             $table->unsignedBigInteger('post_id');
-            $table->foreign('post_id')->references('id')->on('post')->onDelete('cascase');
+            $table->foreign('post_id')->references('id')->on('post')->onDelete('cascade');
             $table->date('create_at')->useCurrent()->nullable();
             $table->date('update_at')->useCurrentOnUpdate()->nullable();
         });
