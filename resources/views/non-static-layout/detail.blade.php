@@ -39,7 +39,7 @@
                   @php 
                     $count =$count+1;
                   @endphp
-                  @if(($count-1)%(count($contents)/(count($images)+1)) == 0)
+                  @if(($count-1)%(count($contents)/(count($images)+1)) == 0 && $count!= count($contents))
                     @if(!empty($images))
                       </div>
                       <div class="mb-2">
