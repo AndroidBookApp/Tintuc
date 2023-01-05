@@ -41,7 +41,6 @@
                     $t = floor(count($contents)/(count($images)+1));
                   @endphp
                   @if($count%($t+1) == 0)
-                  <p>{{$count}}</p>
                     @if(!empty($images))
                       </div>
                       <div class="mb-2">
