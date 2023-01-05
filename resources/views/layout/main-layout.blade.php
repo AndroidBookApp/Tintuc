@@ -22,9 +22,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/#[[latestVersion]]#/mdb.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js" ></script>
-    <script src="assets/js/live-search.js"></script>
-    <script src="assets/js/scroll.js"></script>
-    <script src="assets/js/index.js"></script>
+    <script src="{{ asset('assets/js/live-search.js') }}"></script>
+    <script src="{{ asset('assets/js/scroll.js') }}"></script>
+    <script src="{{ asset('assets/js/index.js') }}"></script>
     <header class="header">
         @include('.static-layout.header')
     </header>
