@@ -39,13 +39,13 @@
                   @php 
                     $count =$count+1;
                   @endphp
-                  @if($count%(count($contents)/(count($images)+1)+1))
+                  @if($count%(count($contents)/(count($images)+1)+1) == 0)
                     @if(!empty($images))
                       <p>{{$count}}</p>
                       </div>
                       <div class="mb-2">
                           <img src="{{$images[$count/3-1]['link']}}" class="img-fluid w-100 mb-2" alt="">
-                          <span>{{$images[$count/3-1]['title']}}</span>
+                          <span>{{$images[$count/(count($contents)/(count($images)+1)+1)-1]['title']}}</span>
                       </div>
                       <div class='nd'>
                     @endif
