@@ -38,20 +38,20 @@
                   <p>{{$content}}</p>
                   @php 
                     $count =$count+1;
-                    $t = count($contents)/(count($images)+1);
+                    $t = floor(count($contents)/(count($images)+1));
                     $im = count($images);
                     $ct = count($contents);
                   @endphp
                   <p>{{$im}}</p>
                   <p>{{$ct}}</p>
                   <p>{{$t}}</p>
-                  @if(($count-1)%(count($contents)/(count($images)+1)) == 0 && $count!= count($contents))
+                  @if($count%($t+1) == 0 && $count!= count($contents))
                   <p>{{$count}}</p>
                     @if(!empty($images))
                       </div>
                       <div class="mb-2">
-                          <img src="{{$images[$count/(count($contents)/(count($images)+1))-1]['link']}}" class="img-fluid w-100 mb-2" alt="">
-                          <span>{{$images[$count/(count($contents)/(count($images)+1))-1]['title']}}</span>
+                          <img src="{{$images[$count/($t+1)-1]['link']}}" class="img-fluid w-100 mb-2" alt="">
+                          <span>{{$images[$count/($t+1)-1]['title']}}</span>
                       </div>
                       <div class='nd'>
                     @endif
