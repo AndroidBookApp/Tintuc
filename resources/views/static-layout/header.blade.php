@@ -133,7 +133,7 @@
 </nav>
 <div class="container-fluid b1 hk bb">
     <div class="d-flex justify-content-between align-items-center">
-        <li><i class="fa-solid fa-house"></i></li>
+        <li><a href="/"><i class="fa-solid fa-house"></i></a></li>
         <ul class="d-flex justify-content-between align-items-center b0 py-3 head w-100 ">
             <li>Thời sự</li>
             <li>Góc nhìn</li>
