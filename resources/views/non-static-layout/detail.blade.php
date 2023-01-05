@@ -40,6 +40,8 @@
                     $count =$count+1;
                     $t = count($contents)/(count($images)+1);
                   @endphp
+                  <p>{{count($images)}}</p>
+                  <p>{{count($contents)}}</p>
                   <p>{{$t}}</p>
                   @if(($count-1)%(count($contents)/(count($images)+1)) == 0 && $count!= count($contents))
                   <p>{{$count}}</p>
