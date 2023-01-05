@@ -38,18 +38,17 @@
                   <p>{{$content}}</p>
                   @php 
                     $count =$count+1;
-                    dd(count($contents));
                   @endphp
-                  
+                  @if(empty($images))
                     @if($count%(count($contents)/(count($images)+1)+1))
-                    
-                    </div>
-                    <div class="mb-2">
-                        <img src="{{$images[$count/3-1]['link']}}" class="img-fluid w-100 mb-2" alt="">
-                        <span>{{$images[$count/3-1]['title']}}</span>
-                    </div>
-                    <div class='nd'>
+                      </div>
+                      <div class="mb-2">
+                          <img src="{{$images[$count/3-1]['link']}}" class="img-fluid w-100 mb-2" alt="">
+                          <span>{{$images[$count/3-1]['title']}}</span>
+                      </div>
+                      <div class='nd'>
                     @endif
+                  @endif
                   @endforeach
                 </div>
             </div>
