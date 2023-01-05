@@ -70,7 +70,7 @@ class PostController extends Controller
         //
         $post = post::findOrFail($id);
         $post = $post->toArray();
-        $detail = detail_post::query()->where('post_id',$id)->first();
+        $detail = detail_post::orderBy('id','desc')->where('post_id',$id)->first();
         $detail = $detail->toArray();
         // dd($detail);
         $images = image::query()->where('post_id',$id)->get();
