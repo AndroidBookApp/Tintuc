@@ -43,8 +43,8 @@
                     @if(!empty($images))
                       </div>
                       <div class="mb-2">
-                          <img src="{{$images[($count-1)/(count($contents)/(count($images)+1))-1]['link']}}" class="img-fluid w-100 mb-2" alt="">
-                          <span>{{$images[($count-1)/(count($contents)/(count($images)+1))-1]['title']}}</span>
+                          <img src="{{$images[$count/(count($contents)/(count($images)+1))-1]['link']}}" class="img-fluid w-100 mb-2" alt="">
+                          <span>{{$images[$count/(count($contents)/(count($images)+1))-1]['title']}}</span>
                       </div>
                       <div class='nd'>
                     @endif
