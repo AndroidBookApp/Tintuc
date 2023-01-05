@@ -39,9 +39,11 @@
                   @php 
                     $count =$count+1;
                     $t = count($contents)/(count($images)+1);
+                    $im = count($images);
+                    $ct = count($contents);
                   @endphp
-                  <p>{{count($images)}}</p>
-                  <p>{{count($contents)}}</p>
+                  <p>{{$im}}</p>
+                  <p>{{$ct}}</p>
                   <p>{{$t}}</p>
                   @if(($count-1)%(count($contents)/(count($images)+1)) == 0 && $count!= count($contents))
                   <p>{{$count}}</p>
