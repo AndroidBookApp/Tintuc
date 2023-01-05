@@ -19,7 +19,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post_new = post::orderBy('create_at','desc')->first();
+        $post_new = post::orderBy('create_at','asc')->first();
         $post_new = $post_new->toArray();
         // dd($post_new);
         $posts = post::all();
