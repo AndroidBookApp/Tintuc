@@ -41,7 +41,6 @@
                   @endphp
                   @if($count%(count($contents)/(count($images)+1)+1) == 0)
                     @if(!empty($images))
-                      <p>{{$count}}</p>
                       </div>
                       <div class="mb-2">
                           <img src="{{$images[$count/3-1]['link']}}" class="img-fluid w-100 mb-2" alt="">
