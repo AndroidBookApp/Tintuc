@@ -38,9 +38,8 @@
                   <p>{{$content}}</p>
                   @php 
                     $count =$count+1;
-                    echo empty($images);
                   @endphp
-                  @if(empty($images))
+                  @if(!empty($images))
                     @if($count%(count($contents)/(count($images)+1)+1))
                       </div>
                       <div class="mb-2">
