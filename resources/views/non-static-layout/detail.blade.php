@@ -23,7 +23,10 @@
             <div class="col-md-7 ">
                 <div class="d-flex justify-content-between align-items-center mb-2">
                     <a href="" class="ts">Thời sự</a>
-                    <span>Thứ bảy, 10/12/2022, 00:00 (GMT+7)</span>
+                    @php  
+                      $date = getdate();
+                    @endphp
+                    <span>{{$date['wday']}}, {{$date['mday/mon/year']}}, {{$date['hours':'minutes']}} (GMT+7)</span>
                 </div>
                 <h2>{{$post['name']}}</h2>
                 <div class="nd">
