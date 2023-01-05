@@ -38,12 +38,11 @@
                   <p>{{$content}}</p>
                   @php 
                     $count =$count+1;
-                    echo ''.count($contents)/(count($images)+1;
+                    $t = count($contents)/(count($images)+1;
                   @endphp
+                  <p>{{$t}}</p>
                   @if(($count-1)%(count($contents)/(count($images)+1)) == 0 && $count!= count($contents))
-                  @php 
-                    echo ''.$count;
-                  @endphp
+                  <p>{{$count}}</p>
                     @if(!empty($images))
                       </div>
                       <div class="mb-2">
