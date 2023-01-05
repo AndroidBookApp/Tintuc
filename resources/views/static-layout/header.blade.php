@@ -138,7 +138,6 @@
             <li>Thời sự</li>
             <li>Góc nhìn</li>
             <li>Thế giới</li>
-            <li>Video</li>
             <li>Podcasts</li>
             <li>Kinh doanh</li>
             <li>Khoa học</li>
@@ -146,12 +145,9 @@
             <li>Thể thao</li>
             <li>Pháp luật</li>
             <li>Giáo dục</li>
-            <li>Sức khỏe</li>
             <li>Đời sống</li>
             <li>Du lịch</li>
-            <li>Số hóa</li>
             <li>Xe </li>
-            <li>ý kiến</li>
         </ul>
     </div>
 </div>
