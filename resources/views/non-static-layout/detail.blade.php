@@ -39,6 +39,7 @@
                   @php 
                     $count =$count+1;
                   @endphp
+                  dd(count($contents));
                     @if($count%(count($contents)/(count($images)+1)+1))
                     
                     </div>
