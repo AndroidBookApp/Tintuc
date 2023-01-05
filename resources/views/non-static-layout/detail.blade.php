@@ -39,13 +39,8 @@
                   @php 
                     $count =$count+1;
                     $t = floor(count($contents)/(count($images)+1));
-                    $im = count($images);
-                    $ct = count($contents);
                   @endphp
-                  <p>{{$im}}</p>
-                  <p>{{$ct}}</p>
-                  <p>{{$t}}</p>
-                  @if($count%($t+1) == 0 && $count!= count($contents))
+                  @if($count%($t+1) == 0)
                   <p>{{$count}}</p>
                     @if(!empty($images))
                       </div>
