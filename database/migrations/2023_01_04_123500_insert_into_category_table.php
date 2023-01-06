@@ -44,6 +44,12 @@ class InsertIntoCategoryTable extends Migration
                 'name' => 'Giải trí'
             )
         );
+
+        DB::table('category')->insert(
+            array(
+                'name' => 'Thế giới'
+            )
+        );
     }
 
     /**

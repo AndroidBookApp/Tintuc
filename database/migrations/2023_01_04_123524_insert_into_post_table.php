@@ -59,7 +59,7 @@ class InsertIntoPostTable extends Migration
                 'name' => 'Ông Phạm Bình Minh, Vũ Đức Đam rời ghế Phó thủ tướng',
                 'rootImage' => 'https://i1-vnexpress.vnecdn.net/2023/01/05/PBM-2261-1613614545-7962-16722-7037-6959-1672908724.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=d5zSDeT8aI38gtfvH-hxJA',
                 'shortDescription' => 'Thủ tướng trình Quốc hội xem xét, phê chuẩn miễn nhiệm chức vụ Phó thủ tướng nhiệm kỳ 2021-2026 đối với hai ông Phạm Bình Minh và Vũ Đức Đam.',
-                'category_id' => '5',
+                'category_id' => '1',
                 'domestic' => true
             )
         );
