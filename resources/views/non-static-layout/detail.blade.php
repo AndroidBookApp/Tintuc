@@ -26,7 +26,7 @@
                     @php  
                       $date = getdate();
                     @endphp
-                    <span>{{$date['wday']}}, {{$date['mday']}}/{{$date['mon']}}/{{$date['year']}}, {{$date['hours']}}:{{$date['minutes']}} (GMT+7)</span>
+                    <span id="timer"></span>
                 </div>
                 <h2>{{$post['name']}}</h2>
                 <div class="nd">

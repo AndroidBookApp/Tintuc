@@ -25,6 +25,7 @@
     <script src="/assets/js/live-search.js"></script>
     <script src="/assets/js/scroll.js"></script>
     <script src="/assets/js/index.js"></script>
+    <script src="/assets/js/real-time.js"></script>
     <header class="header">
         @include('.static-layout.header')
     </header>
