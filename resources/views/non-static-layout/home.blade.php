@@ -28,39 +28,21 @@
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr1RmoGhH9HqO3KyE50_u8vUwog0Vjc-MNjQ&usqp=CAU" class="img-fluid" alt="">
                     </a>
                 </div>
+                <!-- viewest -->
+                @foreach($viewposts as $viewpost)
                 <div class="bt py-3">
-                    <a href="" >An ninh siết chặt tại phiên xử Chủ tịch địa ốc Alibaba</a>
+                    <a href="/details/{{$viewpost->id}}" >{{$viewpost->title}}</a>
                     <div class="row pt-3">
                         <div class="col-md-5">
-                            <img src="https://i1-vnexpress.vnecdn.net/2022/12/07/an-nhon-9444-1670418448.jpg?w=120&h=72&q=100&dpr=2&fit=crop&s=F_1OAADBecHLgKK_eNifzA" class="img-fluid" alt="">
+                            <img src="{{$viewpost->rootImage}}" class="img-fluid" alt="">
                         </div>
                         <div class="col-md-7 pl-0">
-                            <p>TP HCMSáng 8/12, nhiều lớp cảnh sát giữ an ninh trật tự từ cổng toà vào sân và phòng xét xử Nguyễn Thái Luyện, Chủ tịch địa ốc Alibaba, cùng 22 đồng phạm.</p>
+                            <p>{{$viewpost->shortDescription}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="bt py-3">
-                    <a href="" >An ninh siết chặt tại phiên xử Chủ tịch địa ốc Alibaba</a>
-                    <div class="row pt-3">
-                        <div class="col-md-5">
-                            <img src="https://i1-vnexpress.vnecdn.net/2022/12/07/an-nhon-9444-1670418448.jpg?w=120&h=72&q=100&dpr=2&fit=crop&s=F_1OAADBecHLgKK_eNifzA" class="img-fluid" alt="">
-                        </div>
-                        <div class="col-md-7 pl-0">
-                            <p>TP HCMSáng 8/12, nhiều lớp cảnh sát giữ an ninh trật tự từ cổng toà vào sân và phòng xét xử Nguyễn Thái Luyện, Chủ tịch địa ốc Alibaba, cùng 22 đồng phạm.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bt py-3">
-                    <a href="" >An ninh siết chặt tại phiên xử Chủ tịch địa ốc Alibaba</a>
-                    <div class="row pt-3">
-                        <div class="col-md-5">
-                            <img src="https://i1-vnexpress.vnecdn.net/2022/12/07/an-nhon-9444-1670418448.jpg?w=120&h=72&q=100&dpr=2&fit=crop&s=F_1OAADBecHLgKK_eNifzA" class="img-fluid" alt="">
-                        </div>
-                        <div class="col-md-7 pl-0">
-                            <p>TP HCMSáng 8/12, nhiều lớp cảnh sát giữ an ninh trật tự từ cổng toà vào sân và phòng xét xử Nguyễn Thái Luyện, Chủ tịch địa ốc Alibaba, cùng 22 đồng phạm.</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+                <!-- viewest -->
             </div>
             <!-- end left news  -->
             <div class="col-md-7 ">

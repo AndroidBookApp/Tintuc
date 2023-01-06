@@ -21,13 +21,13 @@ class PostController extends Controller
     {
         $post_new = post::orderBy('create_at','asc')->first();
         $post_new = $post_new->toArray();
-        // dd($post_new);
+        $view_posts = post::orderBy('view','asc')->limit(5)->get();
         $posts = post::all();
         return view('non-static-layout.home',[
             'posts' => $posts,
-            'post_new' => $post_new
-
-            ]);
+            'post_new' => $post_new,
+            'view_posts' => $view_posts
+        ]);
     }
 
     /**
@@ -126,5 +126,11 @@ class PostController extends Controller
         post::find($id)->delete();
         $cookie = new CookieController();
         return redirect($cookie->get('url'))->with('message', 'xóa thành công');
+    }
+
+    public static function getpost($cat)
+    {
+        $post = post::query()->where('category_id',$cat)->limit(2)->get();
+        return $post;
     }
 }
