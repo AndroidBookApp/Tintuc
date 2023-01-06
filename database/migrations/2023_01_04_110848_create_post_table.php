@@ -22,8 +22,8 @@ class CreatePostTable extends Migration
             $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade');
             $table->string('shortDescription')->nullable();
             $table->boolean('domestic')->default(false);
-            $table->dateTime('create_at')->default(new Datetime());
-            $table->dateTime('update_at')->default(new Datetime());
+            $table->dateTime('create_at')->default(DB::raw('NOW()'));
+            $table->dateTime('update_at')->default(DB::raw('NOW()'));
         });
     }
 

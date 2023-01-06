@@ -21,8 +21,8 @@ class CreateCommentTable extends Migration
             $table->foreign('post_id')->references('id')->on('post')->onDelete('cascade');
             $table->string('content')->nullable();
             $table->integer('repComment')->nullable();
-            $table->dateTime('create_at')->default(new Datetime());
-            $table->dateTime('update_at')->default(new Datetime());
+            $table->dateTime('create_at')->default(DB::raw('NOW()'));
+            $table->dateTime('update_at')->default(DB::raw('NOW()'));
         });
     }
 

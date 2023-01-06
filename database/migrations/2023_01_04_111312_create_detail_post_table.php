@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateDetailPostTable extends Migration
 {
@@ -18,8 +19,8 @@ class CreateDetailPostTable extends Migration
             $table->unsignedBigInteger('post_id');
             $table->foreign('post_id')->references('id')->on('post')->onDelete('cascade');
             $table->longText('content');
-            $table->dateTime('create_at')->default(new Datetime());
-            $table->dateTime('update_at')->default(new Datetime());
+            $table->dateTime('create_at')->default(DB::raw('NOW()'));
+            $table->dateTime('update_at')->default(DB::raw('NOW()'));
         });
     }
 
