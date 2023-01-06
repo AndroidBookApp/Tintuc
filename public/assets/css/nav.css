@@ -431,3 +431,8 @@ textarea:focus {
 .light-theme .switch {
     transform: translateX(17px);
 }
+
+.background {
+    position: fixed;
+    top: 0;
+}
