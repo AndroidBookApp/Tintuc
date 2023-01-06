@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+use Illuminate\Support\Facades\DB;
 class CreateCommentTable extends Migration
 {
     /**
@@ -21,8 +21,8 @@ class CreateCommentTable extends Migration
             $table->foreign('post_id')->references('id')->on('post')->onDelete('cascade');
             $table->string('content')->nullable();
             $table->integer('repComment')->nullable();
-            $table->date('create_at')->useCurrent()->nullable();
-            $table->date('update_at')->useCurrentOnUpdate()->nullable();
+            $table->date('create_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->date('update_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

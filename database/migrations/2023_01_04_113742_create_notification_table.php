@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+use Illuminate\Support\Facades\DB;
 class CreateNotificationTable extends Migration
 {
     /**
@@ -19,8 +19,8 @@ class CreateNotificationTable extends Migration
             $table->string('content')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->date('create_at')->useCurrent()->nullable();
-            $table->date('update_at')->useCurrentOnUpdate()->nullable();
+            $table->date('create_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->date('update_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

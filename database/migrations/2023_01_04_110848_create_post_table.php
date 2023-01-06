@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreatePostTable extends Migration
 {
@@ -21,8 +22,8 @@ class CreatePostTable extends Migration
             $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade');
             $table->string('shortDescription')->nullable();
             $table->boolean('domestic')->default(false);
-            $table->date('create_at')->default(getdate());
-            $table->date('update_at')->default(getdate());
+            $table->date('create_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->date('update_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 
