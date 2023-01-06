@@ -118,14 +118,6 @@ Sau hơn 10 tháng giao tranh, chiến sự Nga - Ukraine gần đây được n
 '
             )
         );
-
-        DB::table('detail_post')->insert(
-            array(
-                'post_id' => '7',
-                'content' => ''
-            )
-        );
-        
     }
 
     /**
