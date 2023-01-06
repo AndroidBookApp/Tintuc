@@ -20,6 +20,7 @@ class CreatePostTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade');
             $table->string('shortDescription')->nullable();
+            $table->boolean('domestic')->default(false);
             $table->date('create_at')->useCurrent()->nullable();
             $table->date('update_at')->useCurrentOnUpdate()->nullable();
         });
