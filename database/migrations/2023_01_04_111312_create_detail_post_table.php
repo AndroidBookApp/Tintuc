@@ -18,8 +18,8 @@ class CreateDetailPostTable extends Migration
             $table->unsignedBigInteger('post_id');
             $table->foreign('post_id')->references('id')->on('post')->onDelete('cascade');
             $table->longText('content');
-            $table->date('create_at')->useCurrent()->nullable();
-            $table->date('update_at')->useCurrentOnUpdate()->nullable();
+            $table->dateTime('create_at')->useCurrent()->nullable();
+            $table->dateTime('update_at')->useCurrentOnUpdate()->nullable();
         });
     }
 

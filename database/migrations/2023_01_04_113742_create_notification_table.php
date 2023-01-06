@@ -19,8 +19,8 @@ class CreateNotificationTable extends Migration
             $table->string('content')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->date('create_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->date('update_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
+            $table->dateTime('create_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->dateTime('update_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 
