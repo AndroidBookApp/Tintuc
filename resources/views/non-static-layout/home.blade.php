@@ -29,7 +29,7 @@
                     </a>
                 </div>
                 <!-- viewest -->
-                @foreach($viewposts as $viewpost)
+                @foreach($view_posts as $viewpost)
                 <div class="bt py-3">
                     <a href="/details/{{$viewpost->id}}" >{{$viewpost->title}}</a>
                     <div class="row pt-3">
