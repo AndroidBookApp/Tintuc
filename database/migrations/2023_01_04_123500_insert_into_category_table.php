@@ -20,9 +20,28 @@ class InsertIntoCategoryTable extends Migration
                 'name' => 'Thời sự'
             )
         );
+
+        DB::table('category')->insert(
+            array(
+                'name' => 'Giáo dục'
+            )
+        );
+
+        DB::table('category')->insert(
+            array(
+                'name' => 'Kinh doanh'
+            )
+        );
+
         DB::table('category')->insert(
             array(
                 'name' => 'Podcasts'
+            )
+        );
+        
+        DB::table('category')->insert(
+            array(
+                'name' => 'Giải trí'
             )
         );
     }

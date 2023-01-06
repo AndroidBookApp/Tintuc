@@ -23,6 +23,7 @@ class InsertIntoUsersTable extends Migration
                 'last_name' => 'Quỳnh'
             )
         );
+        
         DB::table('users')->insert(
             array(
                 'username' => 'admin',
