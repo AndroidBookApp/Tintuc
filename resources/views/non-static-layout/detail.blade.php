@@ -130,61 +130,29 @@
       role="tabpanel"
       aria-labelledby="ex1-tab-1"
     >
+    @foreach($comments as $comment)
       <div class="d-flex mb-4 g2">
+        @php  
+          $name = App\Http\Controllers\UserController::getName($comment->user_id);
+          $rootImage = App\Http\Controllers\UserController::rootImage($comment->user_id);
+        @endphp
         <div>
-            <img src="https://a1.vnecdn.net/s71263535471831351321.png?w=60&h=60&s=JAV7SpLFhs2MPOG1ebzjAQ" class="img-fluid b50" alt="">
+            <img src="{{$rootImage}}" class="img-fluid b50" alt="">
         </div>
         <div class="d-flex flex-column justify-content-between">
             <div>
-                <strong>vanchuong</strong>
-            <span>Thiết kế web rất oke</span>
+              <strong>{{$name}}</strong>
+              <span>{{$comment->content}}</span>
             </div>
             <div class="d-flex g3">
                 <span><i class="fa-solid fa-thumbs-up"></i> 150</span>
-                <span>Trả lời</span>
-                <span>Chia sẻ</span>
-                <span>12h trước</span>
+                <span class="rep">Trả lời</span>
+                <span>{{$comment->created_at}}</span>
             </div>
         </div>
       </div>
-      <div class="d-flex mb-3 g2">
-        <div>
-            <img src="https://a1.vnecdn.net/s71263535471831351321.png?w=60&h=60&s=JAV7SpLFhs2MPOG1ebzjAQ" class="img-fluid b50" alt="">
-        </div>
-        <div class="d-flex flex-column justify-content-between">
-            <div>
-                <strong>vanchuong</strong>
-            <span>Thiết kế web rất oke</span>
-            </div>
-            <div class="d-flex g3">
-                <span><i class="fa-solid fa-thumbs-up"></i> 150</span>
-                <span>Trả lời</span>
-                <span>Chia sẻ</span>
-                <span>12h trước</span>
-            </div>
-        </div>
-      </div>
+    @endforeach
     </div>
-    <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
-        <div class="d-flex mb-4 g2">
-            <div>
-                <img src="https://a1.vnecdn.net/s71263535471831351321.png?w=60&h=60&s=JAV7SpLFhs2MPOG1ebzjAQ" class="img-fluid b50" alt="">
-            </div>
-            <div class="d-flex flex-column justify-content-between">
-                <div>
-                    <strong>vanchuong</strong>
-                <span>Thiết kế web rất oke</span>
-                </div>
-                <div class="d-flex g3">
-                    <span><i class="fa-solid fa-thumbs-up"></i> 150</span>
-                    <span>Trả lời</span>
-                    <span>Chia sẻ</span>
-                    <span>12h trước</span>
-                </div>
-            </div>
-          </div>
-    </div>
-    
   </div>
   <!-- Tabs content -->
                 </div>
