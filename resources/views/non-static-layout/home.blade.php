@@ -51,7 +51,7 @@
                         <li><a href="" class="a-k" >Thế giới</a></li>
                     </ul>
                     @php  
-                        $news_world = App\Http\Controller\PostController::getpost('Thế giới');
+                        $news_world = App\Http\Controllers\PostController::getpost('Thế giới');
                     @endphp
                     <div class="row ">
                         <div class="col-md-8 br">
