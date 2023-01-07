@@ -193,7 +193,7 @@
                 </div>
             </div>
         </div>
-        <div class="row bt py-3">
+        <!-- <div class="row bt py-3">
             <div class="col-4 pl-0 br">
                 <div class="bt pb-3">
                     <ul class="ti-ul">
@@ -230,7 +230,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <!--end main-->
 @endsection
