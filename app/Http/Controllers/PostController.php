@@ -23,7 +23,7 @@ class PostController extends Controller
     {
         $post_new = post::orderBy('create_at','asc')->first();
         $post_new = $post_new->toArray();
-        $view_posts = post::orderBy('view','asc')->limit(5)->get();
+        $view_posts = post::orderBy('view','asc')->limit(4)->get();
         $posts = post::all();
         return view('non-static-layout.home',[
             'posts' => $posts,
