@@ -13,7 +13,7 @@ function weekday(wd) {
 function startTime() {
     var today = new Date();
     var wd = today.getDay();
-    var dd = todsy.getDate();
+    var dd = today.getDate();
     var mm = today.getMonth();
     var yyyy = today.getFullYear();
     var h = today.getHours();
