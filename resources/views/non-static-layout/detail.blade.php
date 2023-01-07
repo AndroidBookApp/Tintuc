@@ -164,7 +164,7 @@
                 <span>{{$rep->content}}</span>
             </div>
             <div class="d-flex g3">
-                <span><i class="fa-solid fa-thumbs-up"></i> 150</span>
+                <span><i class="fa-regular fa-thumbs-up"></i> 150</span>
                 <span class="rep" id="repcomment{{$comment->id}}">Trả lời</span>
                 <span>{{$rep->created_at}}</span>
             </div>
