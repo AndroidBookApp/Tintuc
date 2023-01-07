@@ -86,7 +86,7 @@ class CommentController extends Controller
 
     public function listing($post)
     {
-        $comment = comment::orderBy('create_at', 'desc')->where('post_id', $post)->where('idComment', null)->get();
+        $comment = comment::orderBy('created_at', 'desc')->where('post_id', $post)->where('repComment', null)->get();
         return $comment;
     }
 }
