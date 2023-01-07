@@ -14,7 +14,7 @@ function startTime() {
     var today = new Date();
     var wd = today.getDay();
     var dd = today.getDate();
-    var mm = today.getMonth();
+    var mm = today.getMonth() + 1;
     var yyyy = today.getFullYear();
     var h = today.getHours();
     var m = today.getMinutes();
@@ -23,6 +23,7 @@ function startTime() {
     // Chuyển đổi sang dạng 01, 02, 03
     wd = weekday(wd);
     dd = checkTime(dd);
+    mm = checkTime(mm);
     h = checkTime(h);
     m = checkTime(m);
     s = checkTime(s);
