@@ -134,7 +134,7 @@ class PostController extends Controller
     {
         $catCTL = new CategoryController();
         $cat = $catCTL->getID($cat);
-        $post = post::query()->where('category_id',$cat->id)->limit(2)->get();
+        $post = post::query()->where('category_id',$cat)->limit(2)->get();
         $post = $post->toArray();
         return $post;
     }
