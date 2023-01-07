@@ -263,6 +263,7 @@
                     </div>
                 </div>
             </div>
+            <hr>
             <div class="col-md-6 pl-0">
                 <div class="bt pb-3">
                     <div class="row ">
