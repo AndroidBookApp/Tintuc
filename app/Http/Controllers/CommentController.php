@@ -40,8 +40,12 @@ class CommentController extends Controller
         //
         $comment = new comment();
         $comment->post_id = $id;
-        $comment->content = $request->input('rep_text');
-        $comment->repComment = $request->input('idcmt');
+        if(isset($request->rep_text)){
+            $comment->repComment = $request->input('idcmt');
+            $comment->content = $request->input('rep_text');
+        }
+        else
+            $comment->content = $request->input('text_cmt');
         $cookie = new CookieController();
         $comment->user_id = $cookie->get('user');
         $comment->save();

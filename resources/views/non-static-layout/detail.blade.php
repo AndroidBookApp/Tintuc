@@ -86,40 +86,22 @@
     </div>
     <div class="container my-3">
         <div class="row">
-            <div class="col-md-8">
-                <h4>ý kiến({{count($comments)}})</h4>
-               <div class="textare">
-                <textarea name="text_cmt" placeholder="Ý kiến của bạn" class="w-100 h30 tx" id=""></textarea>
-               </div>
-                <div>
+            <form method="post" action="/details/{{$id}}/comment" class="col-md-8">
+              <h4>Đánh giá của bạn</h4>
+              <div class="textare">
+                <textarea name="text_cmt" placeholder="Ý kiến của bạn" class="w-100 h30 tx" id="text_cmt"></textarea>
+                
+              </div>
+              <input type="hidden" name="_token"  value="<?php echo csrf_token(); ?>">
+              <input type="submit" value="Bình luận" id="cmt" class="btn btn-dark">
+            <div>
                     <!-- Tabs navs -->
-<ul class="nav nav-tabs my-3" id="ex1" role="tablist">
-    <li class="nav-item" role="presentation">
-      <a
-        class="nav-link "
-        id="ex1-tab-1"
-        data-mdb-toggle="tab"
-        href="#ex1-tabs-1"
-        role="tab"
-        aria-controls="ex1-tabs-1"
-        aria-selected="true"
-        >Quan tâm nhất</a
-      >
-    </li>
-    <li class="nav-item" role="presentation">
-      <a
-        class="nav-link"
-        id="ex1-tab-2"
-        data-mdb-toggle="tab"
-        href="#ex1-tabs-2"
-        role="tab"
-        aria-controls="ex1-tabs-2"
-        aria-selected="false"
-        >Mới nhất</a
-      >
-    </li>
-    
-  </ul>
+            <ul class="nav nav-tabs my-3" id="ex1" role="tablist">
+              <li class="nav-item" role="presentation">
+                <div class="nav-link " id="ex1-tab-1" data-mdb-toggle="tab" role="tab" aria-controls="ex1-tabs-1"
+                  aria-selected="true">Ý kiến </div>
+              </li>
+            </ul>
   <!-- Tabs navs -->
   
   <!-- Tabs content -->
