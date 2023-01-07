@@ -2,8 +2,7 @@
 @section('content')
 @if(App\Http\Controllers\CookieController::checklayout('url'))
   @if(App\Http\Controllers\CookieController::get('url') != "/details/$id")
-    @php  
-      echo "/details/$id";
+    @php 
       App\Http\Controllers\PostController::view($id);
     @endphp
   @endif

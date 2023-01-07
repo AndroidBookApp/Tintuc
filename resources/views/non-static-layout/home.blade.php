@@ -197,16 +197,16 @@
                                 </div>
                                 <div class="col-md-6">
                                 <div>
-                                    <a href="/details/{{$news[1]['id']}}">{{$news[1]['name']}}</a>
-                                    <p class="ab">{{$news[1]['shortDescription']}}</p>
+                                    <a href="/details/{{$news[1]['id']}}">{{$news[0]['name']}}</a>
+                                    <p class="ab">{{$news[0]['shortDescription']}}</p>
                                 </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div>
-                                <a href="/details/{{$news[0]['id']}}">{{$news[0]['name']}}</a>
-                                <p class="ab">{{$news[0]['shortDescription']}}</p>
+                                <a href="/details/{{$news[0]['id']}}">{{$news[1]['name']}}</a>
+                                <p class="ab">{{$news[1]['shortDescription']}}</p>
                             </div>
                         </div>
                     </div>
