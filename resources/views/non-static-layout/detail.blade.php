@@ -146,11 +146,52 @@
             </div>
             <div class="d-flex g3">
                 <span><i class="fa-solid fa-thumbs-up"></i> 150</span>
-                <span class="rep">Trả lời</span>
+                <span class="rep" id="repcomment{{$comment->id}}">Trả lời</span>
                 <span>{{$comment->created_at}}</span>
             </div>
         </div>
       </div>
+      @if(App\Http\Controllers\CookieController::checklayout('user'))
+      @php  
+        $rootImageUser = App\Http\Controllers\UserController::rootImage(App\Http\Controllers\CookieController::get('user'));
+      @endphp
+      <form method="post" action="/details/{id}/comment" class="repcmt" style="margin-left: 50px;">
+        <img src="{{$rootImageUser}}" alt="" style="width:20px; height:20px;">
+        <input type="hidden" name="id" value="{{App\Http\Controllers\CookieController::get('user')}}">
+        <input type="hidden" name="idcmt" value="{{$comment->id}}">
+        <input type="text" name="rep_text" class='repcomment' id=''>
+        <input type="hidden" name="_token"  value="<?php echo csrf_token(); ?>">
+        <input type="submit" value="gữi">
+        <hr>
+      </form>
+      @endif
+      @php  
+        $list_rep = App\Http\Controllers\CommentController::getRepComment($comment->id);
+      @endphp
+      @foreach($list_rep as $rep)
+      <div class="d-flex mb-4 g2" style="margin-left: 20px;">
+        @php  
+          $name = App\Http\Controllers\UserController::getName($rep->user_id);
+          $rootImage = App\Http\Controllers\UserController::rootImage($rep->user_id);
+        @endphp
+        <div style="width: 30px; height:30px;">
+            <img src="{{$rootImage}}" class="img-fluid b50" style="width: 90%; height:90%; margin:10px" alt="">
+        </div>
+        <div class="d-flex flex-column justify-content-between">
+            <div>
+                <strong>{{$name}}</strong><br>
+                <span>{{$rep->content}}</span>
+            </div>
+            <div class="d-flex g3">
+                <span><i class="fa-solid fa-thumbs-up"></i> 150</span>
+                <span class="rep" id="repcomment{{$comment->id}}">Trả lời</span>
+                <span>{{$rep->created_at}}</span>
+            </div>
+        </div>
+        <hr>
+      </div>
+      @endforeach
+      <hr>
     @endforeach
     </div>
   </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\comment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\CookieController;
 
 class CommentController extends Controller
 {
@@ -37,6 +38,15 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         //
+        $comment = new comment();
+        $comment->post_id = $request->id;
+        $comment->content = $request->input('rep_text');
+        $comment->repcomment = $request->input('idcmt');
+        $cookie = new CookieController();
+        $id = $cookie->get('user');
+        $comment->user_id = $id;
+        $comment->save();
+        return redirect($cookie->get('url'));
     }
 
     /**
@@ -88,5 +98,11 @@ class CommentController extends Controller
     {
         $comment = comment::orderBy('created_at', 'desc')->where('post_id', $post)->where('repComment', null)->get();
         return $comment;
+    }
+
+    public static function getRepComment($id)
+    {
+        $list_rep = comment::orderBy('created_at', 'desc')->where('repComment', $id)->get();
+        return $list_rep;
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SocialController;
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,4 +66,8 @@ Route::controller(SocialController::class)->group(function(){
 Route::controller(PostController::class)->group(function(){
     Route::get('/','index');
     Route::get('details/{id}','show');
+});
+
+Route::controller(CommentController::class)->group(function(){
+    Route::post('details/{id}/comment', 'store');
 });
