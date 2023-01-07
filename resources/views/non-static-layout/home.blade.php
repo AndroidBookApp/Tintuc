@@ -50,26 +50,29 @@
                     <ul class="ti-ul">
                         <li><a href="" class="a-k" >Thế giới</a></li>
                     </ul>
+                    @php  
+                        $news_world = App\Http\Controller\PostController::getpost('Thế giới');
+                    @endphp
                     <div class="row ">
                         <div class="col-md-8 br">
                             <div class="row">
                                 <div class="col-md-6" style="padding-right: 0;">
-                                    <div class="h-100">
-                                        <img src="https://i1-kinhdoanh.vnecdn.net/2022/12/07/anh-bthep-jpeg-1670399780-4984-1670399788.jpg?w=380&h=228&q=100&dpr=1&fit=crop&s=KXSD6sVFAj8ljMJY5km53Q" class="img-fluid h-100 " alt="">
-                                    </div>
+                                    <a href="/details/{{$news_world[0]['id]}}" class="h-100">
+                                        <img src="{{$news_world[0]['rootImage]}}" class="img-fluid h-100 " alt="">
+                                    </a>
                                 </div>
                                 <div class="col-md-6">
-                                   <div>
-                                    <a href="">Tiêu thụ thép thấp nhất hai năm</a>
-                                    <p class="ab">HÒA BÌNHVới hàng nghìn tấn rác thải tồn đọng, thành phố phải tập kết rác tạm thời trên đường trung tâm, đào hố chôn trong rừng.</p>
-                                   </div>
+                                <div>
+                                    <a href="/details/{{$news_world[0]['id]}}">{{$news_world[0]['name]}}</a>
+                                    <p class="ab">{{$news_world[0]['shortDescription]}}</p>
+                                </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div>
-                                <a href="">Tiêu thụ thép thấp nhất hai năm</a>
-                                <p class="ab">Tổng lượng tiêu thụ thép toàn ngành tháng 10 giảm về mức thấp nhất hai năm trong bối cảnh các dự án bất động sản và đầu tư công ... </p>
+                                <a href="/details/{{$news_world[0]['id]}}">{{$news_world[0]['name]}}</a>
+                                <p class="ab">{{$news_world[0]['shortDescription]}}</p>
                             </div>
                         </div>
                     </div>

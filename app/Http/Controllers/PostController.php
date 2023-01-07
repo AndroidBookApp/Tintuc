@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\category;
 use App\Models\post;
 use App\Models\detail_post;
 use App\Models\image;
@@ -130,7 +131,9 @@ class PostController extends Controller
 
     public static function getpost($cat)
     {
-        $post = post::query()->where('category_id',$cat)->limit(2)->get();
+        $cat = category::query()->where('name',$cat)->first();
+        $post = post::query()->where('category_id',$cat->id)->limit(2)->get();
+        $post = $post->toArray();
         return $post;
     }
 }
