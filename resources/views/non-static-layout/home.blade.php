@@ -149,10 +149,10 @@
                 <!-- tin podcasts -->
                 <div class="bt pb-3">
                     <ul class="ti-ul">
-                        <li><a href="" class="a-k" >Podcasts</a></li>
+                        <li><a href="" class="a-k" >Đời sống</a></li>
                     </ul>
                     @php  
-                        $news = App\Http\Controllers\PostController::getpost('Podcasts');
+                        $news = App\Http\Controllers\PostController::getpost('Đời sống');
                     @endphp
                     <div class="row ">
                         <div class="col-md-8 br">
