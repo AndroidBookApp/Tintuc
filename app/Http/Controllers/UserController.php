@@ -156,4 +156,10 @@ class UserController extends Controller
                 return redirect($cookie->get('url'))->with('message'.'bạn đã đăng nhập');
             return redirect('/')->with('message'.'bạn đã đăng nhập');
     }
+
+    public static function rootImage($id)
+    {
+        $user = User::query()->where('id', $id)->first();
+        return $user->rootImage;
+    }
 }

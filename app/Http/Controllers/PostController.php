@@ -10,6 +10,7 @@ use App\Http\Resources\PostResource;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CookieController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -68,17 +69,16 @@ class PostController extends Controller
     {
         //
         $post = post::findOrFail($id);
-        $post = $post->toArray();
         $detail = detail_post::orderBy('id','desc')->where('post_id',$id)->first();
-        $detail = $detail->toArray();
-        // dd($detail);
         $images = image::query()->where('post_id',$id)->get();
-        $images = $images->toArray();
+        $comment = new CommentController();
+        $comments = $comment->listing($post->id);
         return view('non-static-layout.detail', [
-            'post' => $post,
-            'detail' => $detail,
+            'post' => $post->toArray(),
+            'detail' => $detail->toArray(),
             'id' =>$id,
-            'images' => $images
+            'images' => $images->toArray(),
+            'comments' => $comments->toArray()
         ]);
     }
 
