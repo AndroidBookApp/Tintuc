@@ -9,9 +9,9 @@
         <div class="row bt">
             <div class="col-md-9">
                 <div class="row">
-                    <div class="col-md-8 pr-0" >
+                    <a href="/details/{{$post_new['id']}}" class="col-md-8 pr-0" >
                         <img src="{{$post_new['rootImage']}}" class="img-fluid" alt="">
-                    </div>
+                    </a>
                     <div class="col-md-4 bg-light">
                         <a href="/details/{{$post_new['id']}}"><h4>{{$post_new['name']}}</h4></a> 
                         <p>{{$post_new['shortDescription']}}</p>
