@@ -23,10 +23,6 @@
             <div class="col-md-7 ">
                 <div class="d-flex justify-content-between align-items-center mb-2">
                     <a href="" class="ts">Thời sự</a>
-                    @php  
-                      $date = getdate();
-                    @endphp
-                    <span id="timer"></span>
                 </div>
                 <h2>{{$post['name']}}</h2>
                 <div class="nd">
