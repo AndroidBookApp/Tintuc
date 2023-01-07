@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <img src="https://s1.vnecdn.net/vnexpress/restruct/i/v728/banner/tethyvong_home_pc.png" class="img-fluid" alt="">
+                <img src="https://scr.vn/wp-content/uploads/2020/07/T%E1%BA%BFt-n%C3%A0y-%C4%91%C6%B0a-g%E1%BA%A5u-v%E1%BB%81-nh%C3%A0.jpg" class="img-fluid" alt="">
             </div>
         </div>
         <!-- end main news  -->
@@ -24,9 +24,7 @@
             <!-- start left news  -->
             <div class="col-md-5 br " style="padding-left: 0px;">
                 <div class="bt pb-3">
-                    <a href="/details/1" >
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr1RmoGhH9HqO3KyE50_u8vUwog0Vjc-MNjQ&usqp=CAU" class="img-fluid" alt="">
-                    </a>
+                        <img src="https://s1.vnecdn.net/vnexpress/restruct/i/v728/banner/tethyvong_home_pc.png" class="img-fluid" alt="">
                 </div>
                 <!-- viewest -->
                 @foreach($view_posts as $viewpost)
