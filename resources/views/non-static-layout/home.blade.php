@@ -100,7 +100,7 @@
                                 </a>
                                 <div class="col-md-9">
                                    <div>
-                                        <a href="/details/{{$news_dometic[1]['id']}}" class="row2-title" >{{$news_dometic[0]['name']}}</a>
+                                        <a href="/details/{{$news_dometic[1]['id']}}" class="row2-title" >{{$news_dometic[1]['name']}}</a>
                                         <p class="ab">{{$news_dometic[1]['shortDescription']}}</p>
                                    </div>
                                 </div>
