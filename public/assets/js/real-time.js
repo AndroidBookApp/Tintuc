@@ -23,12 +23,10 @@ function startTime() {
     // Chuyển đổi sang dạng 01, 02, 03
     wd = weekday(wd);
     dd = checkTime(dd);
-    mm = checkTime(mm);
     h = checkTime(h);
     m = checkTime(m);
     s = checkTime(s);
-    document.write(wd + ", " + dd + "/" + mm + "/" + yyyy + ", " + h + ":" + m + ":" + s)
-        // Ghi ra trình duyệt
+    // Ghi ra trình duyệt
     $('#timer').text(wd + ", " + dd + "/" + mm + "/" + yyyy + ", " + h + ":" + m + ":" + s)
 
     // Dùng hàm setTimeout để thiết lập gọi lại 0.5 giây / lần
