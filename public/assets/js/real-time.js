@@ -28,8 +28,8 @@ document.ready(function() {
         h = checkTime(h);
         m = checkTime(m);
         s = checkTime(s);
-
-        // Ghi ra trình duyệt
+        document.write(wd + ", " + dd + "/" + mm + "/" + yyyy + ", " + h + ":" + m + ":" + s)
+            // Ghi ra trình duyệt
         $('#timer').text(wd + ", " + dd + "/" + mm + "/" + yyyy + ", " + h + ":" + m + ":" + s)
 
         // Dùng hàm setTimeout để thiết lập gọi lại 0.5 giây / lần
