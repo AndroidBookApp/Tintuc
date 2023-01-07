@@ -41,7 +41,7 @@ class CommentController extends Controller
         $comment = new comment();
         $comment->post_id = $request->id;
         $comment->content = $request->input('rep_text');
-        $comment->repcomment = $request->input('idcmt');
+        $comment->repComment = $request->input('idcmt');
         $cookie = new CookieController();
         $id = $cookie->get('user');
         $comment->user_id = $id;
