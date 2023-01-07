@@ -9,7 +9,7 @@
 
     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <div class="navbar-nav">
-            <span id="timer" class="nav-item nav-link">Thứ 6,9/12/2022</span>
+            <span id="timer" class="nav-item nav-link"></span>
         </div>
         <div class=" d-flex align-items-center">
             <div class="mr-3 br">

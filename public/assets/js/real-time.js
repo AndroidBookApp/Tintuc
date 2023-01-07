@@ -7,7 +7,6 @@ function checkTime(i) {
 
 function weekday(wd) {
     var list = ['Chủ Nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7']
-    document.write(list[wd])
     return list[wd]
 }
 
@@ -30,7 +29,7 @@ function startTime() {
     s = checkTime(s);
 
     // Ghi ra trình duyệt
-    document.getElementById('timer').innerHTML = wd + ", " + dd + "/" + mm + "/" + yyyy + ", " + h + ":" + m + ":" + s;
+    $('#timer').text(wd + ", " + dd + "/" + mm + "/" + yyyy + ", " + h + ":" + m + ":" + s)
 
     // Dùng hàm setTimeout để thiết lập gọi lại 0.5 giây / lần
     var t = setTimeout(function() {
