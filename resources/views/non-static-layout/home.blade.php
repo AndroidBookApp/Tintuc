@@ -85,22 +85,44 @@
                     <li><a href="/category/domestic" class="a-k">Tin trong nước</a></li>
                 </ul>
             </div>
+            @php  
+                $news_dometic = App\Http\Controllers\PostController::DomesticPost();
+            @endphp
             <div class="col-md-6 pl-0">
                 <div class="bt pb-3">
                     <div class="row ">
                         <div class="col-md-12 br">
                             <div class="row">
-                                <div class="col-md-3" style="padding-right: 0;">
+                                <a href="/details/{{$news_dometic[1]['id']}}" class="col-md-3" style="padding-right: 0;">
                                     <div class="h-100">
-                                        <img src="https://i1-vnexpress.vnecdn.net/2022/12/08/de-quoc-lon-nhat-dong-nam-a-diet-vong-nhu-the-nao-1670488673.jpg?w=160&h=160&q=100&dpr=2&fit=crop&s=WG7Ud-KAQ-Oqh1cWrhGVKw" class="img-fluid h-100 " alt="">
+                                        <img src="{{$news_dometic[1]['rootImages']}}" class="img-fluid h-100 " alt="">
                                     </div>
-                                </div>
+                                </a>
                                 <div class="col-md-9">
                                    <div>
-                                    <a href="" class="row2-title" >Đế quốc lớn nhất Đông Nam Á diệt vong như thế nào?</a>
-                                    <p class="ab">Sau 600 năm phát triển rực rỡ từ thế kỷ IX, nền văn minh Khmer rộng một triệu km2 đột ngột biến mất, các nhà khoa học tìm thấy nhiều lý do dẫn đến sự diệt vong này.</p>
+                                        <a href="/details/{{$news_dometic[1]['id']}}" class="row2-title" >{{$news_dometic[0]['name']}}</a>
+                                        <p class="ab">{{$news_dometic[1]['shortDescription']}}</p>
                                    </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row ">
+                    <div class="col-md-12 ">
+                        <div class="row">
+                            <a href="/details/{{$news_dometic[2]['id']}}" class="col-md-3" style="padding-right: 0;">
+                                <div class="h-100">
+                                    <img src="{{$news_dometic[2]['rootImages']}}" class="img-fluid h-100 " alt="">
+                                </div>
+                            </a>
+                            <div class="col-md-9">
+                               <div>
+                                <a href="/details/{{$news_dometic[0]['id']}}" class="row2-title" >{{$news_dometic[2]['name']}}</a>
+                                <p class="ab">{{$news_dometic[2]['shortDescription']}}</p>
+                               </div>
                             </div>
                         </div>
                     </div>

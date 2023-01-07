@@ -8,6 +8,7 @@ use App\Models\detail_post;
 use App\Models\image;
 use App\Http\Resources\PostResource;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CookieController;
 use Illuminate\Http\Request;
 
@@ -131,9 +132,16 @@ class PostController extends Controller
 
     public static function getpost($cat)
     {
-        $cat = category::query()->where('name',$cat)->first();
+        $catCTL = new CategoryController();
+        $cat = $catCTL->getID($cat);
         $post = post::query()->where('category_id',$cat->id)->limit(2)->get();
         $post = $post->toArray();
         return $post;
+    }
+
+    public static function DomesticPost()
+    {
+        $posts = post::orderBy('create_at','asc')->where('domestic', true)->limit(3)->get();
+        return $posts->toArray();
     }
 }
