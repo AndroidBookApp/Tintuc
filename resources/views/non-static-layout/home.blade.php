@@ -57,22 +57,22 @@
                         <div class="col-md-8 br">
                             <div class="row">
                                 <div class="col-md-6" style="padding-right: 0;">
-                                    <a href="/details/{{$news_world[0]['id]}}" class="h-100">
-                                        <img src="{{$news_world[0]['rootImage]}}" class="img-fluid h-100 " alt="">
+                                    <a href="/details/{{$news_world[0]['id']}}" class="h-100">
+                                        <img src="{{$news_world[0]['rootImage']}}" class="img-fluid h-100 " alt="">
                                     </a>
                                 </div>
                                 <div class="col-md-6">
                                 <div>
-                                    <a href="/details/{{$news_world[0]['id]}}">{{$news_world[0]['name]}}</a>
-                                    <p class="ab">{{$news_world[0]['shortDescription]}}</p>
+                                    <a href="/details/{{$news_world[0]['id]}}">{{$news_world[0]['name']}}</a>
+                                    <p class="ab">{{$news_world[0]['shortDescription']}}</p>
                                 </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div>
-                                <a href="/details/{{$news_world[0]['id]}}">{{$news_world[0]['name]}}</a>
-                                <p class="ab">{{$news_world[0]['shortDescription]}}</p>
+                                <a href="/details/{{$news_world[0]['id']}}">{{$news_world[0]['name']}}</a>
+                                <p class="ab">{{$news_world[0]['shortDescription']}}</p>
                             </div>
                         </div>
                     </div>
