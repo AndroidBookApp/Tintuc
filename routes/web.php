@@ -66,3 +66,11 @@ Route::controller(PostController::class)->group(function(){
     Route::get('/','index');
     Route::get('details/{id}','show');
 });
+
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+});
+
+Route::get('/admin/page404', function () {
+    return view('admin.page404');
+});
