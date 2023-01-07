@@ -78,7 +78,7 @@ class PostController extends Controller
             'detail' => $detail->toArray(),
             'id' =>$id,
             'images' => $images->toArray(),
-            'comments' => $comments->toArray()
+            'comments' => $comments
         ]);
     }
 

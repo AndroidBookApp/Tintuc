@@ -87,9 +87,9 @@
     <div class="container my-3">
         <div class="row">
             <div class="col-md-8">
-                <h4>Ý kiến(9)</h4>
+                <h4>ý kiến({{count($comments)}})</h4>
                <div class="textare">
-                <textarea name="" placeholder="Ý kiến của bạn" class="w-100 h30 tx" id=""></textarea>
+                <textarea name="text_cmt" placeholder="Ý kiến của bạn" class="w-100 h30 tx" id=""></textarea>
                </div>
                 <div>
                     <!-- Tabs navs -->
@@ -136,13 +136,13 @@
           $name = App\Http\Controllers\UserController::getName($comment->user_id);
           $rootImage = App\Http\Controllers\UserController::rootImage($comment->user_id);
         @endphp
-        <div>
-            <img src="{{$rootImage}}" class="img-fluid b50" alt="">
+        <div style="width: 50px; height:50px;">
+            <img src="{{$rootImage}}" class="img-fluid b50" style="width: 90%; height:90%; margin:10px" alt="">
         </div>
         <div class="d-flex flex-column justify-content-between">
             <div>
-              <strong>{{$name}}</strong>
-              <span>{{$comment->content}}</span>
+                <strong>{{$name}}</strong><br>
+                <span>{{$comment->content}}</span>
             </div>
             <div class="d-flex g3">
                 <span><i class="fa-solid fa-thumbs-up"></i> 150</span>
