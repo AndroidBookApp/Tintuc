@@ -39,7 +39,6 @@ class CommentController extends Controller
     {
         //
         $comment = new comment();
-        dd($request->id);
         $comment->post_id = $id;
         $comment->content = $request->input('rep_text');
         $comment->repComment = $request->input('idcmt');
