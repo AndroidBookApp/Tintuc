@@ -155,9 +155,8 @@
       @php  
         $rootImageUser = App\Http\Controllers\UserController::rootImage(App\Http\Controllers\CookieController::get('user'));
       @endphp
-      <form method="post" action="/details/$id/comment" class="repcmt" style="margin-left: 50px;">
+      <form method="post" action="/details/{{$id}}/comment" class="repcmt" style="margin-left: 50px;">
         <img src="{{$rootImageUser}}" alt="" style="width:20px; height:20px;">
-        <input type="hidden" name="id" value="{{App\Http\Controllers\CookieController::get('user')}}">
         <input type="hidden" name="idcmt" value="{{$comment->id}}">
         <input type="text" name="rep_text" class='repcomment' id=''>
         <input type="hidden" name="_token"  value="<?php echo csrf_token(); ?>">

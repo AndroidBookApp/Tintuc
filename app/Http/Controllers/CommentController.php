@@ -35,16 +35,16 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
         //
         $comment = new comment();
-        $comment->post_id = $request->id;
+        dd($request->id);
+        $comment->post_id = $id;
         $comment->content = $request->input('rep_text');
         $comment->repComment = $request->input('idcmt');
         $cookie = new CookieController();
-        $id = $cookie->get('user');
-        $comment->user_id = $id;
+        $comment->user_id = $cookie->get('user');
         $comment->save();
         return redirect($cookie->get('url'));
     }
