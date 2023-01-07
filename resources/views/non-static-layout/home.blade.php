@@ -1,5 +1,8 @@
 @extends('.layout.main-layout')
 @section('content') 
+@php  
+    App\Http\Controllers\CookieController::set('url','/');
+@endphp
     <!--satrt main-->
     <div class="container py-4">
         <!-- start main news  -->
@@ -70,8 +73,8 @@
                         </div>
                         <div class="col-md-4">
                             <div>
-                                <a href="/details/{{$news_world[0]['id']}}">{{$news_world[0]['name']}}</a>
-                                <p class="ab">{{$news_world[0]['shortDescription']}}</p>
+                                <a href="/details/{{$news_world[1]['id']}}">{{$news_world[1]['name']}}</a>
+                                <p class="ab">{{$news_world[1]['shortDescription']}}</p>
                             </div>
                         </div>
                     </div>
@@ -103,13 +106,14 @@
                         </div>
                         <div class="col-md-4">
                             <div>
-                                <a href="/details/{{$news[0]['id']}}">{{$news[0]['name']}}</a>
-                                <p class="ab">{{$news[0]['shortDescription']}}</p>
+                                <a href="/details/{{$news[1]['id']}}">{{$news[1]['name']}}</a>
+                                <p class="ab">{{$news[1]['shortDescription']}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- tin kihnh doanh -->
+                <!-- tin thời sự -->
                 <div class="bt pb-3">
                     <ul class="ti-ul">
                         <li><a href="" class="a-k" >Thời sự</a></li>
@@ -135,12 +139,79 @@
                         </div>
                         <div class="col-md-4">
                             <div>
+                                <a href="/details/{{$news[1]['id']}}">{{$news[1]['name']}}</a>
+                                <p class="ab">{{$news[1]['shortDescription']}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- tin thời sự -->
+                <!-- tin podcasts -->
+                <div class="bt pb-3">
+                    <ul class="ti-ul">
+                        <li><a href="" class="a-k" >Podcasts</a></li>
+                    </ul>
+                    @php  
+                        $news = App\Http\Controllers\PostController::getpost('Podcasts');
+                    @endphp
+                    <div class="row ">
+                        <div class="col-md-8 br">
+                            <div class="row">
+                                <div class="col-md-6" style="padding-right: 0;">
+                                    <a href="/details/{{$news[0]['id']}}" class="h-100">
+                                        <img src="{{$news[0]['rootImage']}}" class="img-fluid h-100 " alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                <div>
+                                    <a href="/details/{{$news[0]['id']}}">{{$news[0]['name']}}</a>
+                                    <p class="ab">{{$news[0]['shortDescription']}}</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div>
+                                <a href="/details/{{$news[1]['id']}}">{{$news[1]['name']}}</a>
+                                <p class="ab">{{$news[1]['shortDescription']}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- tin podcasts -->
+                <!-- tin giải trí -->
+                <div class="bt pb-3">
+                    <ul class="ti-ul">
+                        <li><a href="" class="a-k" >Giải trí</a></li>
+                    </ul>
+                    @php  
+                        $news = App\Http\Controllers\PostController::getpost('Giải trí');
+                    @endphp
+                    <div class="row ">
+                        <div class="col-md-8 br">
+                            <div class="row">
+                                <div class="col-md-6" style="padding-right: 0;">
+                                    <a href="/details/{{$news[0]['id']}}" class="h-100">
+                                        <img src="{{$news[0]['rootImage']}}" class="img-fluid h-100 " alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                <div>
+                                    <a href="/details/{{$news[1]['id']}}">{{$news[1]['name']}}</a>
+                                    <p class="ab">{{$news[1]['shortDescription']}}</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div>
                                 <a href="/details/{{$news[0]['id']}}">{{$news[0]['name']}}</a>
                                 <p class="ab">{{$news[0]['shortDescription']}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- tin giải trí -->
             </div>
         </div>
         <div class="row bt py-3">
@@ -186,6 +257,46 @@
                                <div>
                                 <a href="/details/{{$news_dometic[2]['id']}}" class="row2-title" >{{$news_dometic[2]['name']}}</a>
                                 <p class="ab">{{$news_dometic[2]['shortDescription']}}</p>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 pl-0">
+                <div class="bt pb-3">
+                    <div class="row ">
+                        <div class="col-md-12 br">
+                            <div class="row">
+                                <a href="/details/{{$news_dometic[3]['id']}}" class="col-md-3" style="padding-right: 0;">
+                                    <div class="h-100">
+                                        <img src="{{$news_dometic[3]['rootImage']}}" class="img-fluid h-100 " alt="">
+                                    </div>
+                                </a>
+                                <div class="col-md-9">
+                                   <div>
+                                        <a href="/details/{{$news_dometic[3]['id']}}" class="row2-title" >{{$news_dometic[3]['name']}}</a>
+                                        <p class="ab">{{$news_dometic[3]['shortDescription']}}</p>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row ">
+                    <div class="col-md-12 ">
+                        <div class="row">
+                            <a href="/details/{{$news_dometic[4]['id']}}" class="col-md-3" style="padding-right: 0;">
+                                <div class="h-100">
+                                    <img src="{{$news_dometic[4]['rootImage']}}" class="img-fluid h-100 " alt="">
+                                </div>
+                            </a>
+                            <div class="col-md-9">
+                               <div>
+                                <a href="/details/{{$news_dometic[4]['id']}}" class="row2-title" >{{$news_dometic[4]['name']}}</a>
+                                <p class="ab">{{$news_dometic[4]['shortDescription']}}</p>
                                </div>
                             </div>
                         </div>

@@ -1,5 +1,17 @@
 @extends('.layout.main-layout')
 @section('content')
+@if(App\Http\Controllers\CookieController::checklayout('url'))
+  @if(App\Http\Controllers\CookieController::get('url') != "/details/$id")
+    @php  
+      echo "/details/$id";
+      App\Http\Controllers\PostController::view($id);
+    @endphp
+  @endif
+@else  
+  @php  
+    App\Http\Controllers\PostController::view($id);
+  @endphp
+@endif
 @php
     App\Http\Controllers\CookieController::set('url',"/details/$id");
 @endphp

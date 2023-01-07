@@ -22,12 +22,9 @@ class PostController extends Controller
     public function index()
     {
         $post_new = post::orderBy('create_at','asc')->first();
-        $post_new = $post_new->toArray();
-        $view_posts = post::orderBy('view','asc')->limit(4)->get();
-        $posts = post::all();
+        $view_posts = post::orderBy('view','desc')->where('id','!=',$post_new->id)->limit(5)->get();
         return view('non-static-layout.home',[
-            'posts' => $posts,
-            'post_new' => $post_new,
+            'post_new' => $post_new->toArray(),
             'view_posts' => $view_posts
         ]);
     }
@@ -141,7 +138,14 @@ class PostController extends Controller
 
     public static function DomesticPost()
     {
-        $posts = post::orderBy('create_at','asc')->where('domestic', true)->limit(3)->get();
+        $posts = post::orderBy('create_at', 'asc')->where('domestic', true)->limit(5)->get();
         return $posts->toArray();
+    }
+
+    public static function view($id)
+    {
+        $post = post::find($id);
+        $post->view= $post->view + 1;
+        $post->save();
     }
 }
