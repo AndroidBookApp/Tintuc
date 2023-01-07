@@ -1,39 +1,41 @@
-function checkTime(i) {
-    if (i < 10) {
-        i = "0" + i;
+document.ready(function() {
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
     }
-    return i;
-}
 
-function weekday(wd) {
-    var list = ['Chủ Nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7']
-    return list[wd]
-}
+    function weekday(wd) {
+        var list = ['Chủ Nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7']
+        return list[wd]
+    }
 
-function startTime() {
-    var today = new Date();
-    var wd = today.getDay();
-    var dd = todsy.getDate();
-    var mm = today.getMonth();
-    var yyyy = today.getFullYear();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
+    function startTime() {
+        var today = new Date();
+        var wd = today.getDay();
+        var dd = todsy.getDate();
+        var mm = today.getMonth();
+        var yyyy = today.getFullYear();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
 
-    // Chuyển đổi sang dạng 01, 02, 03
-    wd = weekday(wd);
-    dd = checkTime(dd);
-    mm = checkTime(mm);
-    h = checkTime(h);
-    m = checkTime(m);
-    s = checkTime(s);
+        // Chuyển đổi sang dạng 01, 02, 03
+        wd = weekday(wd);
+        dd = checkTime(dd);
+        mm = checkTime(mm);
+        h = checkTime(h);
+        m = checkTime(m);
+        s = checkTime(s);
 
-    // Ghi ra trình duyệt
-    $('#timer').text(wd + ", " + dd + "/" + mm + "/" + yyyy + ", " + h + ":" + m + ":" + s)
+        // Ghi ra trình duyệt
+        $('#timer').text(wd + ", " + dd + "/" + mm + "/" + yyyy + ", " + h + ":" + m + ":" + s)
 
-    // Dùng hàm setTimeout để thiết lập gọi lại 0.5 giây / lần
-    var t = setTimeout(function() {
-        startTime();
-    }, 500);
-}
-weekday(0)
+        // Dùng hàm setTimeout để thiết lập gọi lại 0.5 giây / lần
+        var t = setTimeout(function() {
+            startTime();
+        }, 500);
+    }
+    startTime()
+})
