@@ -95,7 +95,7 @@
                             <div class="row">
                                 <a href="/details/{{$news_dometic[1]['id']}}" class="col-md-3" style="padding-right: 0;">
                                     <div class="h-100">
-                                        <img src="{{$news_dometic[1]['rootImages']}}" class="img-fluid h-100 " alt="">
+                                        <img src="{{$news_dometic[1]['rootImage']}}" class="img-fluid h-100 " alt="">
                                     </div>
                                 </a>
                                 <div class="col-md-9">
@@ -115,12 +115,12 @@
                         <div class="row">
                             <a href="/details/{{$news_dometic[2]['id']}}" class="col-md-3" style="padding-right: 0;">
                                 <div class="h-100">
-                                    <img src="{{$news_dometic[2]['rootImages']}}" class="img-fluid h-100 " alt="">
+                                    <img src="{{$news_dometic[2]['rootImage']}}" class="img-fluid h-100 " alt="">
                                 </div>
                             </a>
                             <div class="col-md-9">
                                <div>
-                                <a href="/details/{{$news_dometic[0]['id']}}" class="row2-title" >{{$news_dometic[2]['name']}}</a>
+                                <a href="/details/{{$news_dometic[2]['id']}}" class="row2-title" >{{$news_dometic[2]['name']}}</a>
                                 <p class="ab">{{$news_dometic[2]['shortDescription']}}</p>
                                </div>
                             </div>
