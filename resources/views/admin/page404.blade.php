@@ -1,3 +1,4 @@
+@extends("layouts.master")
 @section("page404")
       <div class="container-fluid">
 

@@ -74,3 +74,7 @@ Route::get('/admin', function () {
 Route::get('/admin/page404', function () {
     return view('admin.page404');
 });
+
+Route::get('/admin/post', function () {
+    return view('admin.post');
+});
