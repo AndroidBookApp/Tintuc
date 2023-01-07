@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="col-md-6">
                                 <div>
-                                    <a href="/details/{{$news_world[0]['id]}}">{{$news_world[0]['name']}}</a>
+                                    <a href="/details/{{$news_world[0]['id']}}">{{$news_world[0]['name']}}</a>
                                     <p class="ab">{{$news_world[0]['shortDescription']}}</p>
                                 </div>
                                 </div>
