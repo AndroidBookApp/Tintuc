@@ -263,7 +263,8 @@
                     </div>
                 </div>
             </div>
-            <hr>
+        </div>
+        <div class="row bt py-3">
             <div class="col-md-6 pl-0">
                 <div class="bt pb-3">
                     <div class="row ">
