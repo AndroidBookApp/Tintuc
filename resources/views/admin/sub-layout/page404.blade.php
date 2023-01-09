@@ -1,5 +1,5 @@
-@extends("layouts.master")
-@section("page404")
+@extends(".layout.master")
+@section("content")
       <div class="container-fluid">
 
       <!-- 404 Error Text -->

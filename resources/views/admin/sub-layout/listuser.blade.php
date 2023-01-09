@@ -1,6 +1,6 @@
 
-@extends("layouts.master")
-@section("users")
+@extends(".layout.master")
+@section("content")
 <div id="content">
       <!-- Begin Page Content -->
       <div class="container-fluid">
