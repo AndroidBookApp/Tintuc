@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\comment;
+use App\Models\like;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Http\Controllers\CookieController;
+use Illuminate\Http\Request;
 
-class CommentController extends Controller
+class LikeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,30 +35,24 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$id)
+    public function store(Request $request)
     {
         //
-        $comment = new comment();
-        $comment->post_id = $id;
-        if(isset($request->rep_text)){
-            $comment->repComment = $request->input('idcmt');
-            $comment->content = $request->input('rep_text');
-        }
-        else
-            $comment->content = $request->input('text_cmt');
         $cookie = new CookieController();
-        $comment->user_id = $cookie->get('user');
-        $comment->save();
+        $like = new like();
+        $like->cmt_id = $request->idcmt;
+        $like->user_id = $cookie->get('user');
+        $like->save();
         return redirect($cookie->get('url'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\comment  $comment
+     * @param  \App\Models\like  $like
      * @return \Illuminate\Http\Response
      */
-    public function show(comment $comment)
+    public function show(like $like)
     {
         //
     }
@@ -66,10 +60,10 @@ class CommentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\comment  $comment
+     * @param  \App\Models\like  $like
      * @return \Illuminate\Http\Response
      */
-    public function edit(comment $comment)
+    public function edit(like $like)
     {
         //
     }
@@ -78,10 +72,10 @@ class CommentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\comment  $comment
+     * @param  \App\Models\like  $like
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, comment $comment)
+    public function update(Request $request, like $like)
     {
         //
     }
@@ -89,26 +83,32 @@ class CommentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\comment  $comment
+     * @param  \App\Models\like  $like
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request)
     {
-        $comment = comment::find($request->idcmt);
-        $comment->delete();
         $cookie = new CookieController();
+        $like = like::query()->where('cmt_id', $request->idcmt)->where('user_id', $cookie->get('user'))->first();
+        $like->delete();
         return redirect($cookie->get('url'));
     }
 
-    public function listing($post)
+    public static function Like($idcmt)
     {
-        $comment = comment::orderBy('created_at', 'desc')->where('post_id', $post)->where('repComment', null)->get();
-        return $comment;
+        if(like::query()->where('cmt_id', $idcmt)->exists())
+        {
+            $like = like::query()->where('cmt_id', $idcmt)->get();
+            return count($like);
+        }
+        
+        return 0;
     }
 
-    public static function getRepComment($id)
+    public static function check($user)
     {
-        $list_rep = comment::orderBy('created_at', 'desc')->where('repComment', $id)->get();
-        return $list_rep;
+        if(like::query()->where('user_id',$user)->exists())
+            return true;
+        return false;
     }
 }

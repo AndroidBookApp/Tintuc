@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -70,4 +71,10 @@ Route::controller(PostController::class)->group(function(){
 
 Route::controller(CommentController::class)->group(function(){
     Route::post('details/{id}/comment', 'store');
+    Route::get('details/{id}/deleteComment/{idcmt}', 'destroy');
+});
+
+Route::controller(LikeController::class)->group(function(){
+    Route::get('details/{id}/like/{idcmt}', 'store');
+    Route::get('details/{id}/unlike/{idcmt}', 'destroy');
 });

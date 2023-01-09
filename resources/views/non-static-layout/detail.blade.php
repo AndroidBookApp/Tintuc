@@ -121,36 +121,42 @@
         <div style="width: 50px; height:50px;">
             <img src="{{$rootImage}}" class="img-fluid b50" style="width: 90%; height:90%; margin:10px" alt="">
         </div>
-        <div class="d-flex flex-column justify-content-between">
+        <div class="d-flex flex-column justify-content-between" id="cmt{{$comment->id}}">
             <div>
                 <strong>{{$name}}</strong><br>
                 <span>{{$comment->content}}</span>
             </div>
             <div class="d-flex g3">
-                <span><i class="fa-solid fa-thumbs-up"></i> 150</span>
-                <button class="rep btn-light" aria-label="Close" style="border: none;" idform="repcomment{{$comment->id}}">Trả lời</button>
-                <button class="btn-light" aria-label="Close" style="border: none;"><i class="fa-solid fa-trash"></i>Xóa</button>
+                @if(App\Http\Controllers\LikeController::check(App\Http\Controllers\CookieController::get('user')))
+                  <a href="/details/{{$id}}/unlike/{{$comment->id}}"><i class="fa-solid fa-thumbs-up"></i>{{ App\Http\Controllers\LikeController::Like($comment->id) }}</a>
+                @else
+                  <a href="/details/{{$id}}/like/{{$comment->id}}"><i class="fa-regular fa-thumbs-up"></i>{{ App\Http\Controllers\LikeController::Like($comment->id) }}</a>
+                @endif
+                <a href="#cmt{{$comment->id}}" class="rep btn-light" aria-label="Close" style="border: none;" idform="repcomment{{$comment->id}}">Trả lời</a>
+                <a href="/details/{{$id}}/deleteComment/{{$comment->id}}" class="btn-light" aria-label="Close" style="border: none;"><i class="fa-solid fa-trash"></i>Xóa</a>
                 <span>{{$comment->created_at}}</span>
             </div>
         </div>
       </div>
       @if(App\Http\Controllers\CookieController::checklayout('user'))
-      @php  
-        $rootImageUser = App\Http\Controllers\UserController::rootImage(App\Http\Controllers\CookieController::get('user'));
-      @endphp
-        <form method="post" action="/details/{{$id}}/comment" id="repcomment{{$comment->id}}" class="repcmt row g-3" style="margin-left: 50px; display:none;">
-          <div class="col-auto" style="padding-left:0; padding-right: 0px; line-height:30px;">
-            <img src="{{$rootImageUser}}" alt="" style="width:20px; height:20px;">
-          </div>
-          <div class="col-auto">
-            <input type="text" class="form-control repcomment" id="rep_text" placeholder="Ý kiến của bạn">
-            <input type="hidden" name="idcmt" value="{{$comment->id}}">
-            <input type="hidden" name="_token"  value="<?php echo csrf_token(); ?>">
-          </div>
-          <div class="col-auto">
-            <input type="submit" class="btn btn-primary mb-3" value="gữi"/>
-          </div>
-        </form>
+        @php  
+          $rootImageUser = App\Http\Controllers\UserController::rootImage(App\Http\Controllers\CookieController::get('user'));
+        @endphp
+        <div id="repcomment{{$comment->id}}" class="repcmt row g-3" style="margin-left: 50px; display:none;">
+          <form action="/details/{{$id}}/comment" method="post">
+            <div class="col-auto" style="padding-left:0; padding-right: 0px; line-height:30px;">
+              <img src="{{$rootImageUser}}" alt="" style="width:20px; height:20px;">
+            </div>
+            <div class="col-auto">
+              <input type="text" class="form-control repcomment" name="rep_text" id="rep_text" placeholder="Ý kiến của bạn">
+              <input type="hidden" name="idcmt" value="{{$comment->id}}">
+              <input type="hidden" name="_token"  value="<?php echo csrf_token(); ?>">
+            </div>
+            <div class="col-auto">
+              <input type="submit" class="btn btn-primary mb-3" value="gữi"/>
+            </div>
+          </form>
+        </div>
       @endif
       @php  
         $list_rep = App\Http\Controllers\CommentController::getRepComment($comment->id);
@@ -171,7 +177,8 @@
             </div>
             <div class="d-flex g3">
                 <span><i class="fa-regular fa-thumbs-up"></i> 150</span>
-                <button class="rep btn-light" aria-label="Close" style="border: none;" idform="repcomment{{$comment->id}}">Trả lời</button>
+                <a href="#cmt{{$comment->id}}" class="rep btn-light" aria-label="Close" style="border: none;" idform="repcomment{{$comment->id}}">Trả lời</a>
+                <a href="/details/{{$id}}/deleteComment/{{$comment->id}}" class="btn-light" aria-label="Close" style="border: none;"><i class="fa-solid fa-trash"></i>Xóa</a>
                 <span>{{$rep->created_at}}</span>
             </div>
         </div>
