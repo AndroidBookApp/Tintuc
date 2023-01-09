@@ -91,7 +91,7 @@ class LikeController extends Controller
         $cookie = new CookieController();
         $like = like::query()->where('cmt_id', $request->idcmt)->where('user_id', $cookie->get('user'))->first();
         $like->delete();
-        return redirect($cookie->get('url').'#like'.$request->cmt);
+        return redirect($cookie->get('url').'#like'.$request->idcmt);
     }
 
     public static function Like($idcmt)
