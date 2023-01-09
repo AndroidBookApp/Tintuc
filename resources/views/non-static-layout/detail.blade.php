@@ -176,9 +176,13 @@
                 <span>{{$rep->content}}</span>
             </div>
             <div class="d-flex g3">
-                <span><i class="fa-regular fa-thumbs-up"></i> 150</span>
-                <a href="#cmt{{$comment->id}}" class="rep btn-light" aria-label="Close" style="border: none;" idform="repcomment{{$comment->id}}">Trả lời</a>
-                <a href="/details/{{$id}}/deleteComment/{{$comment->id}}" class="btn-light" aria-label="Close" style="border: none;"><i class="fa-solid fa-trash"></i>Xóa</a>
+                @if(App\Http\Controllers\LikeController::check(App\Http\Controllers\CookieController::get('user')))
+                  <a href="/details/{{$id}}/unlike/{{$rep->id}}" id="like{{$rep->id}}"><i class="fa-solid fa-thumbs-up"></i>{{ App\Http\Controllers\LikeController::Like($comment->id) }}</a>
+                @else
+                  <a href="/details/{{$id}}/like/{{$rep->id}}" id="like{{$rep->id}}"><i class="fa-regular fa-thumbs-up"></i>{{ App\Http\Controllers\LikeController::Like($comment->id) }}</a>
+                @endif
+                <a href="#cmt{{$rep->id}}" class="rep btn-light" aria-label="Close" style="border: none;" idform="repcomment{{$comment->id}}">Trả lời</a>
+                <a href="/details/{{$id}}/deleteComment/{{$rep->id}}" class="btn-light" aria-label="Close" style="border: none;"><i class="fa-solid fa-trash"></i>Xóa</a>
                 <span>{{$rep->created_at}}</span>
             </div>
         </div>
