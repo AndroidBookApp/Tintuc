@@ -128,7 +128,8 @@
             </div>
             <div class="d-flex g3">
                 <span><i class="fa-solid fa-thumbs-up"></i> 150</span>
-                <span class="rep" id="repcomment{{$comment->id}}">Trả lời</span>
+                <button class="rep btn-light" aria-label="Close" style="border: none;" idform="repcomment{{$comment->id}}">Trả lời</button>
+                <button class="btn-light" aria-label="Close" style="border: none;"><i class="fa-solid fa-trash"></i>Xóa</button>
                 <span>{{$comment->created_at}}</span>
             </div>
         </div>
@@ -137,14 +138,19 @@
       @php  
         $rootImageUser = App\Http\Controllers\UserController::rootImage(App\Http\Controllers\CookieController::get('user'));
       @endphp
-      <form method="post" action="/details/{{$id}}/comment" class="repcmt" style="margin-left: 50px;">
-        <img src="{{$rootImageUser}}" alt="" style="width:20px; height:20px;">
-        <input type="hidden" name="idcmt" value="{{$comment->id}}">
-        <input type="text" name="rep_text" class='repcomment' id=''>
-        <input type="hidden" name="_token"  value="<?php echo csrf_token(); ?>">
-        <input type="submit" value="gữi">
-        <hr>
-      </form>
+        <form method="post" action="/details/{{$id}}/comment" id="repcomment{{$comment->id}}" class="repcmt row g-3" style="margin-left: 50px; display:none;">
+          <div class="col-auto" style="padding-left:0; padding-right: 0px; line-height:30px;">
+            <img src="{{$rootImageUser}}" alt="" style="width:20px; height:20px;">
+          </div>
+          <div class="col-auto">
+            <input type="text" class="form-control repcomment" id="rep_text" placeholder="Ý kiến của bạn">
+            <input type="hidden" name="idcmt" value="{{$comment->id}}">
+            <input type="hidden" name="_token"  value="<?php echo csrf_token(); ?>">
+          </div>
+          <div class="col-auto">
+            <input type="submit" class="btn btn-primary mb-3" value="gữi"/>
+          </div>
+        </form>
       @endif
       @php  
         $list_rep = App\Http\Controllers\CommentController::getRepComment($comment->id);
@@ -165,7 +171,7 @@
             </div>
             <div class="d-flex g3">
                 <span><i class="fa-regular fa-thumbs-up"></i> 150</span>
-                <span class="rep" id="repcomment{{$comment->id}}">Trả lời</span>
+                <button class="rep btn-light" aria-label="Close" style="border: none;" idform="repcomment{{$comment->id}}">Trả lời</button>
                 <span>{{$rep->created_at}}</span>
             </div>
         </div>
