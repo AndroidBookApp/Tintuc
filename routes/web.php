@@ -68,9 +68,22 @@ Route::controller(PostController::class)->group(function(){
     Route::get('/','index');
     Route::get('details/{id}','show');
 });
+ 
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+});
+
+Route::get('/admin/page404', function () {
+    return view('admin.page404');
+});
+
+Route::get('/admin/post', function () {
+    return view('admin.post');
+});
 
 Route::controller(CommentController::class)->group(function(){
     Route::post('details/{id}/comment', 'store');
+<<<<<<< HEAD
     Route::get('details/{id}/deleteComment/{idcmt}', 'destroy');
 });
 
@@ -78,3 +91,7 @@ Route::controller(LikeController::class)->group(function(){
     Route::get('details/{id}/like/{idcmt}', 'store');
     Route::get('details/{id}/unlike/{idcmt}', 'destroy');
 });
+=======
+});
+ 
+>>>>>>> origin/admin_vt
