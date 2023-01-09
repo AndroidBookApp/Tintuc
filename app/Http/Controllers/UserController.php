@@ -142,7 +142,6 @@ class UserController extends Controller
     public static function getName($id)
     {
         $user = User::query()->where('id',$id)->first();
-        // dd($user);
         if($user->first_name !== null || $user->last_name !== null)
             return $user->last_name.' '.$user->first_name;
         return $user->username;
@@ -155,5 +154,11 @@ class UserController extends Controller
             if($cookie->check('url'))
                 return redirect($cookie->get('url'))->with('message'.'bạn đã đăng nhập');
             return redirect('/')->with('message'.'bạn đã đăng nhập');
+    }
+
+    public static function rootImage($id)
+    {
+        $user = User::query()->where('id', $id)->first();
+        return $user->rootImage;
     }
 }

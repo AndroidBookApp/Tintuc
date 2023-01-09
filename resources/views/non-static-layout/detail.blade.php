@@ -1,5 +1,16 @@
 @extends('.layout.main-layout')
 @section('content')
+@if(App\Http\Controllers\CookieController::checklayout('url'))
+  @if(App\Http\Controllers\CookieController::get('url') != "/details/$id")
+    @php 
+      App\Http\Controllers\PostController::view($id);
+    @endphp
+  @endif
+@else  
+  @php  
+    App\Http\Controllers\PostController::view($id);
+  @endphp
+@endif
 @php
     App\Http\Controllers\CookieController::set('url',"/details/$id");
 @endphp
@@ -75,40 +86,22 @@
     </div>
     <div class="container my-3">
         <div class="row">
-            <div class="col-md-8">
-                <h4>Ý kiến(9)</h4>
-               <div class="textare">
-                <textarea name="" placeholder="Ý kiến của bạn" class="w-100 h30 tx" id=""></textarea>
-               </div>
-                <div>
+            <form method="post" action="/details/{{$id}}/comment" class="col-md-8">
+              <h4>Đánh giá của bạn</h4>
+              <div class="textare">
+                <textarea name="text_cmt" placeholder="Ý kiến của bạn" class="w-100 h30 tx" id="text_cmt"></textarea>
+                
+              </div>
+              <input type="hidden" name="_token"  value="<?php echo csrf_token(); ?>">
+              <input type="submit" value="Bình luận" id="cmt" class="btn btn-dark">
+            <div>
                     <!-- Tabs navs -->
-<ul class="nav nav-tabs my-3" id="ex1" role="tablist">
-    <li class="nav-item" role="presentation">
-      <a
-        class="nav-link "
-        id="ex1-tab-1"
-        data-mdb-toggle="tab"
-        href="#ex1-tabs-1"
-        role="tab"
-        aria-controls="ex1-tabs-1"
-        aria-selected="true"
-        >Quan tâm nhất</a
-      >
-    </li>
-    <li class="nav-item" role="presentation">
-      <a
-        class="nav-link"
-        id="ex1-tab-2"
-        data-mdb-toggle="tab"
-        href="#ex1-tabs-2"
-        role="tab"
-        aria-controls="ex1-tabs-2"
-        aria-selected="false"
-        >Mới nhất</a
-      >
-    </li>
-    
-  </ul>
+            <ul class="nav nav-tabs my-3" id="ex1" role="tablist">
+              <li class="nav-item" role="presentation">
+                <div class="nav-link " id="ex1-tab-1" data-mdb-toggle="tab" role="tab" aria-controls="ex1-tabs-1"
+                  aria-selected="true">Ý kiến </div>
+              </li>
+            </ul>
   <!-- Tabs navs -->
   
   <!-- Tabs content -->
@@ -119,61 +112,75 @@
       role="tabpanel"
       aria-labelledby="ex1-tab-1"
     >
+    @foreach($comments as $comment)
       <div class="d-flex mb-4 g2">
-        <div>
-            <img src="https://a1.vnecdn.net/s71263535471831351321.png?w=60&h=60&s=JAV7SpLFhs2MPOG1ebzjAQ" class="img-fluid b50" alt="">
+        @php  
+          $name = App\Http\Controllers\UserController::getName($comment->user_id);
+          $rootImage = App\Http\Controllers\UserController::rootImage($comment->user_id);
+        @endphp
+        <div style="width: 50px; height:50px;">
+            <img src="{{$rootImage}}" class="img-fluid b50" style="width: 90%; height:90%; margin:10px" alt="">
         </div>
         <div class="d-flex flex-column justify-content-between">
             <div>
-                <strong>vanchuong</strong>
-            <span>Thiết kế web rất oke</span>
+                <strong>{{$name}}</strong><br>
+                <span>{{$comment->content}}</span>
             </div>
             <div class="d-flex g3">
                 <span><i class="fa-solid fa-thumbs-up"></i> 150</span>
-                <span>Trả lời</span>
-                <span>Chia sẻ</span>
-                <span>12h trước</span>
+                <button class="rep btn-light" aria-label="Close" style="border: none;" idform="repcomment{{$comment->id}}">Trả lời</button>
+                <button class="btn-light" aria-label="Close" style="border: none;"><i class="fa-solid fa-trash"></i>Xóa</button>
+                <span>{{$comment->created_at}}</span>
             </div>
         </div>
       </div>
-      <div class="d-flex mb-3 g2">
-        <div>
-            <img src="https://a1.vnecdn.net/s71263535471831351321.png?w=60&h=60&s=JAV7SpLFhs2MPOG1ebzjAQ" class="img-fluid b50" alt="">
-        </div>
-        <div class="d-flex flex-column justify-content-between">
-            <div>
-                <strong>vanchuong</strong>
-            <span>Thiết kế web rất oke</span>
-            </div>
-            <div class="d-flex g3">
-                <span><i class="fa-solid fa-thumbs-up"></i> 150</span>
-                <span>Trả lời</span>
-                <span>Chia sẻ</span>
-                <span>12h trước</span>
-            </div>
-        </div>
-      </div>
-    </div>
-    <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
-        <div class="d-flex mb-4 g2">
-            <div>
-                <img src="https://a1.vnecdn.net/s71263535471831351321.png?w=60&h=60&s=JAV7SpLFhs2MPOG1ebzjAQ" class="img-fluid b50" alt="">
-            </div>
-            <div class="d-flex flex-column justify-content-between">
-                <div>
-                    <strong>vanchuong</strong>
-                <span>Thiết kế web rất oke</span>
-                </div>
-                <div class="d-flex g3">
-                    <span><i class="fa-solid fa-thumbs-up"></i> 150</span>
-                    <span>Trả lời</span>
-                    <span>Chia sẻ</span>
-                    <span>12h trước</span>
-                </div>
-            </div>
+      @if(App\Http\Controllers\CookieController::checklayout('user'))
+      @php  
+        $rootImageUser = App\Http\Controllers\UserController::rootImage(App\Http\Controllers\CookieController::get('user'));
+      @endphp
+        <form method="post" action="/details/{{$id}}/comment" id="repcomment{{$comment->id}}" class="repcmt row g-3" style="margin-left: 50px; display:none;">
+          <div class="col-auto" style="padding-left:0; padding-right: 0px; line-height:30px;">
+            <img src="{{$rootImageUser}}" alt="" style="width:20px; height:20px;">
           </div>
+          <div class="col-auto">
+            <input type="text" class="form-control repcomment" id="rep_text" placeholder="Ý kiến của bạn">
+            <input type="hidden" name="idcmt" value="{{$comment->id}}">
+            <input type="hidden" name="_token"  value="<?php echo csrf_token(); ?>">
+          </div>
+          <div class="col-auto">
+            <input type="submit" class="btn btn-primary mb-3" value="gữi"/>
+          </div>
+        </form>
+      @endif
+      @php  
+        $list_rep = App\Http\Controllers\CommentController::getRepComment($comment->id);
+      @endphp
+      @foreach($list_rep as $rep)
+      <div class="d-flex mb-4 g2" style="margin-left: 20px;">
+        @php  
+          $name = App\Http\Controllers\UserController::getName($rep->user_id);
+          $rootImage = App\Http\Controllers\UserController::rootImage($rep->user_id);
+        @endphp
+        <div style="width: 30px; height:30px;">
+            <img src="{{$rootImage}}" class="img-fluid b50" style="width: 90%; height:90%; margin:10px" alt="">
+        </div>
+        <div class="d-flex flex-column justify-content-between">
+            <div>
+                <strong>{{$name}}</strong><br>
+                <span>{{$rep->content}}</span>
+            </div>
+            <div class="d-flex g3">
+                <span><i class="fa-regular fa-thumbs-up"></i> 150</span>
+                <button class="rep btn-light" aria-label="Close" style="border: none;" idform="repcomment{{$comment->id}}">Trả lời</button>
+                <span>{{$rep->created_at}}</span>
+            </div>
+        </div>
+        <hr>
+      </div>
+      @endforeach
+      <hr>
+    @endforeach
     </div>
-    
   </div>
   <!-- Tabs content -->
                 </div>

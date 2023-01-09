@@ -8,7 +8,9 @@ use App\Models\detail_post;
 use App\Models\image;
 use App\Http\Resources\PostResource;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CookieController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -21,12 +23,9 @@ class PostController extends Controller
     public function index()
     {
         $post_new = post::orderBy('create_at','asc')->first();
-        $post_new = $post_new->toArray();
-        $view_posts = post::orderBy('view','asc')->limit(5)->get();
-        $posts = post::all();
+        $view_posts = post::orderBy('view','desc')->where('id','!=',$post_new->id)->limit(5)->get();
         return view('non-static-layout.home',[
-            'posts' => $posts,
-            'post_new' => $post_new,
+            'post_new' => $post_new->toArray(),
             'view_posts' => $view_posts
         ]);
     }
@@ -70,17 +69,16 @@ class PostController extends Controller
     {
         //
         $post = post::findOrFail($id);
-        $post = $post->toArray();
         $detail = detail_post::orderBy('id','desc')->where('post_id',$id)->first();
-        $detail = $detail->toArray();
-        // dd($detail);
         $images = image::query()->where('post_id',$id)->get();
-        $images = $images->toArray();
+        $comment = new CommentController();
+        $comments = $comment->listing($post->id);
         return view('non-static-layout.detail', [
-            'post' => $post,
-            'detail' => $detail,
+            'post' => $post->toArray(),
+            'detail' => $detail->toArray(),
             'id' =>$id,
-            'images' => $images
+            'images' => $images->toArray(),
+            'comments' => $comments
         ]);
     }
 
@@ -131,9 +129,23 @@ class PostController extends Controller
 
     public static function getpost($cat)
     {
-        $cat = category::query()->where('name',$cat)->first();
-        $post = post::query()->where('category_id',$cat->id)->limit(2)->get();
+        $catCTL = new CategoryController();
+        $cat = $catCTL->getID($cat);
+        $post = post::query()->where('category_id',$cat)->limit(2)->get();
         $post = $post->toArray();
         return $post;
+    }
+
+    public static function DomesticPost()
+    {
+        $posts = post::orderBy('create_at', 'asc')->where('domestic', true)->limit(5)->get();
+        return $posts->toArray();
+    }
+
+    public static function view($id)
+    {
+        $post = post::find($id);
+        $post->view= $post->view + 1;
+        $post->save();
     }
 }
