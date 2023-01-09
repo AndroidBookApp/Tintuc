@@ -5,6 +5,8 @@ use App\Mail\Sendmail;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\admin\PostController as AminPostController;
+use App\Http\Controllers\admin\UserController as AminUserController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\CommentController;
 /*
@@ -76,9 +78,21 @@ Route::get('/admin/page404', function () {
     return view('admin.page404');
 });
 
-Route::get('/admin/post', function () {
-    return view('admin.post');
-});
+/*  */
+Route::get('/admin/post', [AminPostController::class, "index"]);
+Route::get('/admin/post/create', [AminPostController::class, "create"]);
+Route::post('/admin/post/create', [AminPostController::class, "store"]);
+Route::get('/admin/post/edit/{id}', [AminPostController::class, "edit"]);
+Route::post('/admin/post/edit/{id}',  [AminPostController::class, "update"]); 
+
+
+/* user */
+Route::get('/admin/users', [AminUserController::class, "index"]);
+Route::get('/admin/users/create', [AminUserController::class, "create"]);
+Route::post('/admin/users/create', [AminUserController::class, "store"]);
+Route::get('/admin/users/edit/{id}', [AminUserController::class, "edit"]);
+Route::post('/admin/users/edit/{id}',  [AminUserController::class, "update"]);
+Route::get('/admin/users/{id}', [AminUserController::class, "show"]);
 
 Route::controller(CommentController::class)->group(function(){
     Route::post('details/{id}/comment', 'store');

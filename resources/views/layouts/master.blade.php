@@ -314,7 +314,7 @@
                   @yield("content")
                   @yield("users")
                   @yield("page404")
-                  @yield("post")
+                  @yield("post") 
                 
 
                 </div>
