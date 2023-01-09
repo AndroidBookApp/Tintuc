@@ -83,7 +83,6 @@ Route::get('/admin/post', function () {
 
 Route::controller(CommentController::class)->group(function(){
     Route::post('details/{id}/comment', 'store');
-<<<<<<< HEAD
     Route::get('details/{id}/deleteComment/{idcmt}', 'destroy');
 });
 
@@ -91,7 +90,3 @@ Route::controller(LikeController::class)->group(function(){
     Route::get('details/{id}/like/{idcmt}', 'store');
     Route::get('details/{id}/unlike/{idcmt}', 'destroy');
 });
-=======
-});
- 
->>>>>>> origin/admin_vt
