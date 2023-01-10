@@ -84,6 +84,7 @@ Route::get('/admin/post/create', [AminPostController::class, "create"]);
 Route::post('/admin/post/create', [AminPostController::class, "store"]);
 Route::get('/admin/post/edit/{id}', [AminPostController::class, "edit"]);
 Route::post('/admin/post/edit/{id}',  [AminPostController::class, "update"]); 
+Route::get('/admin/post/delete/{id}',  [AminPostController::class, "delete"]); 
 
 
 /* user */

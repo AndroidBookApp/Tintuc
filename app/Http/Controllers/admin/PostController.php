@@ -77,4 +77,12 @@ class PostController extends Controller
         //Thực hiện chuyển trang
         return redirect('/admin/post');
     }
+
+    public function delete($id)
+    {
+        $post = post::findOrFail($id);
+
+        $post->delete();
+        return redirect('admin/post');
+    }
 }

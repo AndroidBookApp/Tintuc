@@ -15,7 +15,7 @@
                                                 echo substr($post->shortDescription, 0, 100)
                                                 ?> <a href="/admin/post/edit/{{$post->id}}" style="color: blue; text-decoration: none;">...Xem thêm</a></p>
                         <a href="/admin/post/edit/{{$post->id}}" style="position: absolute; width:100px; bottom:10px;left:10px" class="btn btn-primary">Chỉnh sửa</a>
-                        <a href="" style="position: absolute;width:100px; bottom:10px;right:10px" class="btn btn-danger">Xóa bài</a>
+                        <a href="/admin/post/delete/{{$post->id}}" style="position: absolute;width:100px; bottom:10px;right:10px" class="btn btn-danger">Xóa bài</a>
                   </div>
             </div>
             @endforeach

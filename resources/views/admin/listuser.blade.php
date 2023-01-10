@@ -38,7 +38,7 @@
                                                       <td class="col-3">
                                                             <a href="/admin/users/{{$user->id}}" class="btn btn-success">Xem</a>
                                                             <a href="/admin/users/edit/{{$user->id}}" class="btn btn-primary">Sửa</a>
-                                                            <a class="btn btn-warning">Xóa</a>
+                                                             
                                                       </td>
                                                 </tr>
                                          @endforeach
